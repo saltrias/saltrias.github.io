@@ -10,7 +10,7 @@ import json
 # | -al                                         |
 # -----------------------------------------------
 
-imageList = os.listdir("../") # makes list from directory above
+imageList = os.listdir("../images") # makes list from directory above
 
 if "assets viewer" in imageList:
   imageList.remove("assets viewer")
