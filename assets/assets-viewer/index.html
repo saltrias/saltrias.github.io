@@ -13,11 +13,31 @@
       style="max-width: 200px; display: block; margin-bottom: 10px"
       id="image"
     />
-    <button id="BackButton">go back</button>
-    <button id="PreviousButton">previous</button>
-    <button id="OriginalButton">original size</button>
-    <button id="NextButton">next</button>
-    <button id="RandomButton">random</button>
-    <script src="script.js"></script>
+    <div id="buttons">
+      <button id="BackButton">go back</button>
+      <button id="PreviousButton">previous</button>
+      <button id="OriginalButton">original size</button>
+      <button id="NextButton">next</button>
+      <button id="RandomButton">random</button>
+      <script src="script.js"></script>
+    </div>
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+      #buttons{
+        position:absolute;
+        display: flex;
+        bottom: 0;
+        width: 100%;
+        justify-content: space-evenly;
+        margin:0
+      }
+      #buttons > *{
+        width: 200px;
+        height: 200px;
+        /* margin: auto; */
+      }
+    </style>
   </body>
 </html>
