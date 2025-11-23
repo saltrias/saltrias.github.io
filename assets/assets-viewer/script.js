@@ -11,6 +11,8 @@ let currentIndex = 0;
 let ImageViewer = document.getElementById("image");
 let imageName;
 let path;
+let linusChance = 1/5; // hehehehe..
+let linusScareText = document.getElementById("linusScare");
 
 async function loadImages() {
   try {
@@ -24,6 +26,11 @@ async function loadImages() {
 }
 
 function changeImage(changeInstruction) {
+  if (linusChance > Math.random()) {
+    ImageViewer.src = "../images/linus.jpeg"
+    linusScareText.innerText = "boo! linus has appeared"
+    return;
+  }
   switch (changeInstruction) {
     case "PREVIOUS":
       currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
@@ -39,8 +46,7 @@ function changeImage(changeInstruction) {
   const imageName = imageList[currentIndex];
   const path = "../images/" + imageName;
   ImageViewer.src = path;
-  console.log("hi i am displaying image file: " + imageName);
-  console.log("hi again the path is at: " + path);
+  linusScareText.innerText = ""
 }
 
 PreviousButton.onclick = function(){
@@ -59,8 +65,9 @@ OriginalButton.onclick = function(){
   OriginalButton.innerText = "No."
 }
 
-loadImages();
 
 BackButton.onclick = function() {
   window.location.href = "https://saltrias.github.io"
 };
+
+loadImages();
