@@ -15,6 +15,9 @@ imageList = os.listdir("../images") # makes list from directory above
 if "assets viewer" in imageList:
   imageList.remove("assets viewer")
 
+if "linus.jpeg" in imageList:
+  imageList.remove("linus.jpeg")
+
 imageList.sort()
 
 print("writing json file...")
