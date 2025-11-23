@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>language corner</title>
+    <style>
+      body {
+        background-color: rgb(176, 156, 230);
+      }
+
+      #langs {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      #langs > * {
+        width: 200px;
+      }
+      .paused {
+        filter: grayscale();
+      }
+    </style>
+  </head>
+  <body>
+    <h2>language corner</h2>
+    <div id="langs">
+      <img src="../assets/images/flag-indonesia.png" alt="Flag of Indonesia" />
+      <img src="../assets/images/flag-uk.png" alt="Flag of United Kingdom" />
+      <img src="../assets/images/flag-saudi_arabia.png" alt="Flag of Saudi Arabia" />
+      <img src="../assets/images/flag-japan.png" alt="Flag of Japan" class="paused">
+    </div>
+  </body>
+</html>
