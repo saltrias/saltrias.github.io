@@ -11,7 +11,7 @@ let currentIndex = 0;
 let ImageViewer = document.getElementById("image");
 let imageName;
 let path;
-let linusChance = 1/5; // hehehehe..
+let linusChance = 1 / 100; // hehehehe..
 let linusScareText = document.getElementById("linusScare");
 
 async function loadImages() {
@@ -19,16 +19,15 @@ async function loadImages() {
     const response = await fetch("image-list.json");
     imageList = await response.json();
     console.log(imageList.length + " images loaded");
-  } 
-  catch (err) {
-    console.log("uh oh somehing happened: "  + err);
+  } catch (err) {
+    console.log("uh oh somehing happened: " + err);
   }
 }
 
 function changeImage(changeInstruction) {
   if (linusChance > Math.random()) {
-    ImageViewer.src = "../images/linus.jpeg"
-    linusScareText.innerText = "boo! linus has appeared"
+    ImageViewer.src = "../images/linus.jpeg";
+    linusScareText.innerText = "boo! linus has appeared";
     return;
   }
   switch (changeInstruction) {
@@ -46,28 +45,27 @@ function changeImage(changeInstruction) {
   const imageName = imageList[currentIndex];
   const path = "../images/" + imageName;
   ImageViewer.src = path;
-  linusScareText.innerText = ""
+  linusScareText.innerText = "";
 }
 
-PreviousButton.onclick = function(){
-  changeImage("PREVIOUS")
-}
+PreviousButton.onclick = function () {
+  changeImage("PREVIOUS");
+};
 
-NextButton.onclick = function(){
-  changeImage("NEXT")
-}
+NextButton.onclick = function () {
+  changeImage("NEXT");
+};
 
-RandomButton.onclick = function(){
-  changeImage("RANDOM")
-}
+RandomButton.onclick = function () {
+  changeImage("RANDOM");
+};
 
-OriginalButton.onclick = function(){
-  OriginalButton.innerText = "No."
-}
+OriginalButton.onclick = function () {
+  OriginalButton.innerText = "No.";
+};
 
-
-BackButton.onclick = function() {
-  window.location.href = "https://saltrias.github.io"
+BackButton.onclick = function () {
+  window.location.href = "https://saltrias.github.io";
 };
 
 loadImages();

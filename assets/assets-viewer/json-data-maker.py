@@ -6,14 +6,11 @@ import json
 # | This is not something you might want to see.| 
 # | This is just a boring random python script  |
 # | I need for just one feature in this website |
-# | This is extremely boring                    |
+# | This is extremely and unsatisfyingly boring.|
 # | -al                                         |
 # -----------------------------------------------
 
 imageList = os.listdir("../images") # makes list from directory above
-
-if "assets viewer" in imageList:
-  imageList.remove("assets viewer")
 
 if "linus.jpeg" in imageList:
   imageList.remove("linus.jpeg")
