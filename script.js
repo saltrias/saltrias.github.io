@@ -13,10 +13,6 @@ for (let l = 0; l < websiteName.length; l++) {
   else {
     verticalVariance = 4;
   }
-  letterSpan.style = `
-  font-size: 24px;
-  margin-top: ${20-verticalVariance}px;
-  `;
   websiteNameDiv.appendChild(letterSpan);
 }
 
