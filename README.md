@@ -1,8 +1,7 @@
-# my website
+# saltrias.github.io
 
-please don't push/commit i just want to make a website :(
+Welcome to my github repo idk what to tell you
 
-# Colors Used
+### Contributions and whatever
 
-posts: hsl(101, 30%, 50%)
-language section: hsl(256, 60%, 76%)
+Please feel free to make any contributions to this website i guess just send me a pr?? idk just do your thing and ill figure out if itll work or not
