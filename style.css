@@ -1,0 +1,17 @@
+html {
+  width: 100%;
+  /* I don't know how to center divs okay im sory */
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin:0;
+  padding:0;
+  width: 80%;
+}
+
+#websiteName {
+  display: flex;
+  justify-content: center;
+}
