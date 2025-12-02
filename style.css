@@ -6,16 +6,20 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
   width: 80%;
 }
 
-#websiteName {
+#topNavBar {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-#websiteName > * {
+#topNavBar h1 {
+  margin:0;
+}
+
+#topNavBar a {
   font-size: 24px;
 }
