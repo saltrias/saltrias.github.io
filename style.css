@@ -18,7 +18,7 @@ body {
 }
 
 #topNavBar h1 {
-  margin:0;
+  margin: 0;
 }
 
 #topNavBar a {
@@ -26,17 +26,36 @@ body {
 }
 
 #topRowDiv {
-  border: 2px solid #000;
   display: flex;
 }
 
-#weatherDiv h2, #weatherDiv p {
+#weatherDiv h2,
+#weatherDiv p {
   margin: 0;
 }
 
-#weatherDiv {
+#weatherDiv { 
+  display: flex;
   flex: 2;
-  border: 2px solid rgb(0, 195, 255);
+  justify-content: space-evenly;
+  max-height: 100px;
+}
+
+#leftRow {
+  margin-right: auto;
+}
+
+#centerRow {
+  flex: 0 auto;
+  max-width: 75px;
+}
+
+#centerRow img {
+  width: 80px;
+}
+
+#rightRow {
+  margin-left: auto;
 }
 
 #fakeStockDiv {
