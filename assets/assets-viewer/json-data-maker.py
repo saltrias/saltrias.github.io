@@ -10,7 +10,11 @@ import json
 # | -al                                         |
 # -----------------------------------------------
 
+# please make sure you are in /assets
+# TODO: organize your shit with folders
 imageList = os.listdir("../images") # makes list from directory above
+
+
 
 if "linus.jpeg" in imageList:
   imageList.remove("linus.jpeg")
