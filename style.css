@@ -8,7 +8,8 @@ body {
 }
 
 .wrapper {
-  width: 75%;
+  width: 60%;
+  margin-top: 20px;
 }
 
 #topNavBar {
@@ -25,6 +26,37 @@ body {
 
 #topNavBar a {
   font-size: 24px;
+}
+
+/* 
+\\\\\\\\\\\\\\
+Cookie Section
+//////////////
+*/
+
+#cookiePopUp {
+  width: 300px;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  border: 2px solid black;
+}
+
+#cookieText {
+  font-size: 24px;
+  text-align: center;
+}
+
+#cookieButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+#cookieButtons > button {
+  width: 80px;
+  height: 40px;
 }
 
 /*///////////////////
@@ -88,25 +120,30 @@ body {
 }
 
 #kanjiYear {
-  color: hsl(0, 70%, 60%) !important;
+  color: hsl(0, 80%, 60%) !important;
 }
 
 #kanjiMonth {
-  color: hsl(60, 70%, 60%) !important;
+  color: hsl(60, 80%, 60%) !important;
 }
 
 #kanjiDay {
-  color: hsl(120, 70%, 60%) !important;
+  color: hsl(120, 80%, 60%) !important;
 }
 
 #kanjiHour {
-  color: hsl(180, 70%, 60%) !important;
+  color: hsl(180, 80%, 60%) !important;
 }
 
 #kanjiMinute {
-  color: hsl(240, 70%, 60%) !important;
+  color: hsl(240, 80%, 60%) !important;
 }
 
 #kanjiSecond {
-  color: hsl(300, 70%, 60%) !important; 
+  color: hsl(300, 80%, 60%) !important; /* ihave to do this*/
 }
+
+/*/\/\/\/\/\/*\
+/|Animations!|/
+\*\/\/\/\/\/\*/
+

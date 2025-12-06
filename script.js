@@ -1,3 +1,46 @@
+/*
+\\\\\\\\\\\\\\\\\\
+\ cookie section \
+\\\\\\\\\\\\\\\\\\
+*/
+
+let acceptedCookies = false;
+let buttonAlreadyClikced = false;
+
+let cookiePopUpDiv = document.getElementById("cookiePopUp");
+let cookieButtonDiv = document.getElementById("cookieButtons");
+
+let acceptCookieButton = document.getElementById("acceptCookies");
+let rejectCookieButton = document.getElementById("rejectCookies");
+let cookieP = document.getElementById("cookieText");
+
+function removeCookiePopUp() {
+  cookiePopUpDiv.remove();
+}
+
+acceptCookieButton.onclick = function () {
+  if (buttonAlreadyClikced) {
+    return;
+  }
+  buttonAlreadyClikced = true;
+
+  acceptedCookies = true;
+  cookieP.innerText = "thanks for accepting them :)";
+  cookieButtonDiv.remove();
+  setInterval(removeCookiePopUp, 5000);
+};
+
+rejectCookieButton.onclick = function () {
+  if (buttonAlreadyClikced) {
+    return;
+  }
+
+  buttonAlreadyClikced = true;
+  cookieP.innerText = "why did you reject them :(";
+  cookieButtonDiv.remove();
+  setInterval(removeCookiePopUp, 5000);
+};
+
 /////////////////////
 // weather section //
 /////////////////////
@@ -155,6 +198,8 @@ function updateKanjiTime(params) {
   minuteP.innerText = `${minute}分`;
   secondP.innerText = `${second}秒`;
 }
+
+// Main Loop \\
 
 async function main() {
   getWeather();
