@@ -41,10 +41,6 @@ body {
   max-height: 100px;
 }
 
-#leftRow {
-  margin-right: auto;
-}
-
 #centerRow {
   flex: 0 auto;
   max-width: 75px;
@@ -55,7 +51,15 @@ body {
 }
 
 #rightRow {
-  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 20px;
+  min-width: 175px;
+}
+
+#rightRow p {
+  text-align: left;
 }
 
 #fakeStockDiv {

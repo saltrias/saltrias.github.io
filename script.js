@@ -4,7 +4,11 @@
 
 let temperature;
 let temperatureP = document.getElementById("temperature");
+
 let imageIcon = document.getElementById("weatherIcon");
+let windSpeedP = document.getElementById("weatherWindSpeed");
+let windDirectionP = document.getElementById("weatherWindDirection");
+let elevationP = document.getElementById("weatherElevation");
 
 // behold my magnum opus
 const WEATHER_SUMMARY = {
@@ -16,7 +20,7 @@ const WEATHER_SUMMARY = {
 
   45: ["ooh foggy", "Fog"],
   48: ["ooh foggy", "Fog"],
-  
+
   51: ["ooh drizzly", "Drizzle"],
   53: ["ooh drizzly", "Drizzle"],
   55: ["ooh drizzly", "Drizzle"],
@@ -34,7 +38,7 @@ const WEATHER_SUMMARY = {
 
   66: ["ooh cold rain", "Rain"],
   67: ["ooh cold rain", "Rain"],
-  
+
   71: ["it's kinda snowy", "Snowy"],
   73: ["it's kinda snowy", "Snowy"],
   75: ["it's kinda snowy", "Snowy"],
@@ -57,12 +61,26 @@ function getWeatherSummary(weatherCode) {
 // }
 
 function changeIcon(weatherCode) {
-  let imagePath = `/assets/images/${WEATHER_SUMMARY[weatherCode][1]}.png`
+  let imagePath = `/assets/images/${WEATHER_SUMMARY[weatherCode][1]}.png`;
   imageIcon.src = imagePath;
 }
 
+function getWindDirectionAbbreviation(degree) {
+  const windRoseAbbreviations = [
+    "N", "NNE", "NE", "ENE",
+    "E", "ESE", "SE", "SSE",
+    "S", "SSW", "SW", "WSW",
+    "W", "WNW", "NW", "NNW"
+  ];
+
+  degree = degree % 360;          // normalize
+  const index = Math.floor((degree + 11.25) / 22.5) % 16;
+
+  return windRoseAbbreviations[index];
+}
+
 async function main() {
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=64.1355&longitude=-21.8954&current_weather=true`;
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=-6.1818&longitude=106.8223&current_weather=true`;
   try {
     const response = await fetch(url);
 
@@ -70,15 +88,27 @@ async function main() {
       console.log(`bitch it said ${response.status}`);
     }
 
-    const data = await response.json();
-    const currentWeather = data.current_weather;
-    const currentWeathercode = currentWeather.weathercode;
-    const weatherSummary = getWeatherSummary(currentWeathercode);
-    
+    let data = await response.json();
+    let currentWeather = data.current_weather;
+    let currentWeathercode = currentWeather.weathercode;
+    let weatherSummary = getWeatherSummary(currentWeathercode);
+
+    // change temperature
     temperature = currentWeather.temperature;
     temperatureP.innerText = `${temperature}°C. ${weatherSummary}`;
 
+    // changes icons
     changeIcon(currentWeathercode);
+
+    // change wind direction whatever
+    let windDirection = currentWeather.winddirection;
+    let windDirectionAbbreviation = getWindDirectionAbbreviation(windDirection);
+    let windSpeed = currentWeather.windspeed;
+    let elevation = data.elevation;
+
+    windDirectionP.innerText = `Wind direction: ${windDirectionAbbreviation}`;
+    windSpeedP.innerText = `Wind speed: ${windSpeed}km/h`;
+    elevationP.innerText = `Elevation: ${elevation}m`;
 
   } catch (error) {
     console.log(`bitch you did a ${error}`);
@@ -87,10 +117,9 @@ async function main() {
 
 main();
 
-/* 
-\\//\\//\\//\\//\\//
-// Stock Section! \\
-\\ Stock Section! //
-////\\//\\//\\//\\\\
+ 
+/*
+>>>>>Stock>>>>>>>>>>
+<<<<<<<<Section<<<<<
 */
 
