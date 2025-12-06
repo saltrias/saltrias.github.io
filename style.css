@@ -1,20 +1,63 @@
-
-#title {
-  font-size: 250%;
-  margin-bottom: 10px;
-  margin-top: 0;
+html {
+  width: 100%;
+  /* I don't know how to center divs okay im sory */
+  display: flex;
+  justify-content: center;
 }
 
-#houseImage {
-  width: 200px;
+body {
+  width: 80%;
 }
 
-#links {
+#topNavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#topNavBar h1 {
+  margin: 0;
+}
+
+#topNavBar a {
+  font-size: 24px;
+}
+
+#topRowDiv {
   display: flex;
 }
 
-#links > * {
-  /* margin-left: 5px; */
-  margin-right: 20px;
-  font-size: 125%;
+#weatherDiv h2,
+#weatherDiv p {
+  margin: 0;
+}
+
+#weatherDiv { 
+  display: flex;
+  flex: 2;
+  justify-content: space-evenly;
+  max-height: 100px;
+}
+
+#leftRow {
+  margin-right: auto;
+}
+
+#centerRow {
+  flex: 0 auto;
+  max-width: 75px;
+}
+
+#centerRow img {
+  width: 80px;
+}
+
+#rightRow {
+  margin-left: auto;
+}
+
+#fakeStockDiv {
+  flex: 3;
 }
