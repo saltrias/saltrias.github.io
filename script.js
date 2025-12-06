@@ -67,19 +67,31 @@ function changeIcon(weatherCode) {
 
 function getWindDirectionAbbreviation(degree) {
   const windRoseAbbreviations = [
-    "N", "NNE", "NE", "ENE",
-    "E", "ESE", "SE", "SSE",
-    "S", "SSW", "SW", "WSW",
-    "W", "WNW", "NW", "NNW"
+    "N",
+    "NNE",
+    "NE",
+    "ENE",
+    "E",
+    "ESE",
+    "SE",
+    "SSE",
+    "S",
+    "SSW",
+    "SW",
+    "WSW",
+    "W",
+    "WNW",
+    "NW",
+    "NNW",
   ];
 
-  degree = degree % 360;          // normalize
+  degree = degree % 360; // normalize
   const index = Math.floor((degree + 11.25) / 22.5) % 16;
 
   return windRoseAbbreviations[index];
 }
 
-async function main() {
+async function getWeather() {
   const url = `https://api.open-meteo.com/v1/forecast?latitude=-6.1818&longitude=106.8223&current_weather=true`;
   try {
     const response = await fetch(url);
@@ -109,17 +121,47 @@ async function main() {
     windDirectionP.innerText = `Wind direction: ${windDirectionAbbreviation}`;
     windSpeedP.innerText = `Wind speed: ${windSpeed}km/h`;
     elevationP.innerText = `Elevation: ${elevation}m`;
-
   } catch (error) {
     console.log(`bitch you did a ${error}`);
   }
 }
 
-main();
+getWeather();
 
- 
 /*
->>>>>Stock>>>>>>>>>>
-<<<<<<<<Section<<<<<
+>>>>>Time>>>>>>>>>>>
+<<<<<<<Section<<<<<<
 */
 
+let yearP = document.getElementById("kanjiYear");
+let monthP = document.getElementById("kanjiMonth");
+let dayP = document.getElementById("kanjiDay");
+let hourP = document.getElementById("kanjiHour");
+let minuteP = document.getElementById("kanjiMinute");
+let secondP = document.getElementById("kanjiSecond");
+
+function updateKanjiTime(params) {
+  let year = new Date().getFullYear();
+  let month = new Date().getMonth();
+  let day = new Date().getDate();
+  let hour = new Date().getHours();
+  let minute = new Date().getMinutes();
+  let second = new Date().getSeconds();
+
+  yearP.innerText = `${year}年`;
+  monthP.innerText = `${month}月`;
+  dayP.innerText = `${day}日`;
+  hourP.innerText = `${hour}時`;
+  minuteP.innerText = `${minute}分`;
+  secondP.innerText = `${second}秒`;
+}
+
+async function main() {
+  getWeather();
+  updateKanjiTime();
+
+  setInterval(updateKanjiTime, 1000);
+  setInterval(getWeather, 10 * 60 * 1000);
+}
+
+main();
