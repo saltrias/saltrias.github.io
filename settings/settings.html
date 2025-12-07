@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Settings</title>
-</head>
-<body>
-  <input type="checkbox" id="DarkModeCheckobx">
-  <label for="DarkModeCheckobx">Dark Mode</label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+  </head>
+  <body>
+    <div id="settings">
+      <input type="radio" id="DarkModeCheckbox" name="theme" />
+      <label for="DarkModeCheckobx">Dark Mode</label>
 
-  <button id="ApplyChanges"> apply changes </button>
-  <script src="settings.js"></script>
-</body>
+      <input type="radio" id="LightModeCheckbox" name="theme" />
+      <label for="LightModeCheckbox">Light Mode</label>
+    </div>
+
+    <button id="ApplyChanges">apply changes</button>
+    <link rel="stylesheet" href="style.css" />
+    <script src="settings.js"></script>
+  </body>
 </html>
