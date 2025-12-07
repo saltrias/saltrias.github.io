@@ -1,4 +1,5 @@
 import os
+import subprocess
 import json
 
 # -----------------------------------------------
@@ -12,12 +13,14 @@ import json
 
 # please make sure you are in /assets
 # TODO: organize your shit with folders
-imageList = os.listdir("../images") # makes list from directory above
+# imageList = os.listdir("../images") # makes list from directory above
 
+listString = subprocess.run(["find", "../images", "-type", "f"], capture_output=True, text=True)
 
+imageList = listString.stdout.strip().splitlines()
 
-if "linus.jpeg" in imageList:
-  imageList.remove("linus.jpeg")
+if "'../images/linus.jpeg'" in imageList:
+  imageList.remove("'../images/linus.jpeg'")
 
 imageList.sort()
 

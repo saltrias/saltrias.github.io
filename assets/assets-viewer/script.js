@@ -43,7 +43,7 @@ function changeImage(changeInstruction) {
   }
 
   const imageName = imageList[currentIndex];
-  const path = "../images/" + imageName;
+  const path = imageName;
   ImageViewer.src = path;
   linusScareText.innerText = "";
 }
