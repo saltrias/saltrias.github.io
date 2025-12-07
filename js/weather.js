@@ -61,7 +61,7 @@ function getWeatherSummary(weatherCode) {
 // }
 
 function changeIcon(weatherCode) {
-  let imagePath = `/assets/images/${WEATHER_SUMMARY[weatherCode][1]}.png`;
+  let imagePath = `../assets/images/WeatherIcons/${WEATHER_SUMMARY[weatherCode][1]}.png`;
   imageIcon.src = imagePath;
 }
 

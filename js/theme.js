@@ -15,6 +15,7 @@ export function loadCSSCookie() {
 
   let root = document.documentElement;
   let cookiePopUp = document.getElementById("cookiePopUp");
+  if (!cookiePopUp) return;
 
   if (cookie.theme == "dark") {
     root.style.setProperty("--body-background", "#000");

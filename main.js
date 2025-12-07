@@ -12,4 +12,4 @@ async function main() {
   setInterval(getWeather, 15 * 60 * 1000);
 }
 
-main();
+document,addEventListener("DOMContentLoaded", main);
