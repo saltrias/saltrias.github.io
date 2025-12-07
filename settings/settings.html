@@ -7,15 +7,21 @@
   </head>
   <body>
     <div id="settings">
-      <input type="radio" id="DarkModeCheckbox" name="theme" />
-      <label for="DarkModeCheckobx">Dark Mode</label>
+      <div id="ThemeCheckbox">
+        <input type="radio" id="DarkModeRadio" name="theme" />
+        <label for="DarkModeRadio">Dark Mode</label>
 
-      <input type="radio" id="LightModeCheckbox" name="theme" />
-      <label for="LightModeCheckbox">Light Mode</label>
+        <input type="radio" id="LightModeRadio" name="theme" />
+        <label for="LightModeRadio">Light Mode</label>
+      </div>
+      <div id="ReducedColor">
+        <input type="checkbox" id="ReducedColorCheckbox"/>
+        <label for="checkbox">Reduced Color</label>
+      </div>
     </div>
 
     <button id="ApplyChanges">apply changes</button>
     <link rel="stylesheet" href="style.css" />
-    <script src="settings.js"></script>
+    <script type="module" src="../js/settings.js"></script>
   </body>
 </html>

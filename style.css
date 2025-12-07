@@ -34,6 +34,8 @@ body {
 
 #topNavBar a {
   font-size: 24px;
+  text-decoration: none;
+  color: var(--text-color) !important;
 }
 
 /* 
@@ -149,6 +151,10 @@ Cookie Section
 
 #kanjiSecond {
   color: hsl(300, 80%, 60%) !important; /* ihave to do this*/
+}
+
+.reduced-color {
+  color: #fff !important;
 }
 
 /*/\/\/\/\/\/*\
