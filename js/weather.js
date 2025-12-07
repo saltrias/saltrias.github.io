@@ -92,7 +92,7 @@ function getWindDirectionAbbreviation(degree) {
 }
 
 export async function getWeather() {
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=-6.1818&longitude=106.8223&current_weather=true`;
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=-6.2349&longitude=106.9896&current_weather=true`;
   try {
     const response = await fetch(url);
 
