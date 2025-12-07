@@ -1,3 +1,9 @@
+:root {
+  --background-color: white;
+  --text-color: black;
+  color: var(--text-color) !important;
+}
+
 html,
 body {
   width: 100%;
@@ -5,6 +11,7 @@ body {
   justify-content: center;
   margin: 0;
   padding: 0;
+  background-color: var(--body-background);
 }
 
 .wrapper {
@@ -22,6 +29,7 @@ body {
 
 #topNavBar h1 {
   margin: 0;
+  color: var(--text-color) !important;
 }
 
 #topNavBar a {

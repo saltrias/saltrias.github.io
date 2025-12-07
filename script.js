@@ -18,6 +18,13 @@ function removeCookiePopUp() {
   cookiePopUpDiv.remove();
 }
 
+function createCookie() {
+  let maxAge = 60 * 60 * 24 * 365 * 5; // too ambitious i know
+  document.cookie = `cookiesAccepted=true; path=/; max-age=${maxAge}`;
+  document.cookie = `theme=dark; path=/; max-age=${maxAge}`;
+  document.cookie = `reduced-color=false; path=/; max-age=${maxAge}`;
+}
+
 acceptCookieButton.onclick = function () {
   if (buttonAlreadyClikced) {
     return;
@@ -25,9 +32,10 @@ acceptCookieButton.onclick = function () {
   buttonAlreadyClikced = true;
 
   acceptedCookies = true;
+  createCookie();
   cookieP.innerText = "thanks for accepting them :)";
   cookieButtonDiv.remove();
-  setInterval(removeCookiePopUp, 5000);
+  setTimeout(removeCookiePopUp, 5000);
 };
 
 rejectCookieButton.onclick = function () {
@@ -38,8 +46,20 @@ rejectCookieButton.onclick = function () {
   buttonAlreadyClikced = true;
   cookieP.innerText = "why did you reject them :(";
   cookieButtonDiv.remove();
-  setInterval(removeCookiePopUp, 5000);
+  setTimeout(removeCookiePopUp, 5000);
 };
+
+function dictCookie() {
+  // stupid chatgpt code idkwtfitdoes
+  const cookies = document.cookie.split(";"); // ["name=value", ...]
+  const dict = {};
+
+  cookies.forEach((cookie) => {
+    const [name, value] = cookie.trim().split("=");
+    dict[name] = value;
+  });
+  return dict;
+}
 
 /////////////////////
 // weather section //
@@ -199,11 +219,34 @@ function updateKanjiTime(params) {
   secondP.innerText = `${second}秒`;
 }
 
+/*/////*/
+// CSS //
+/*/////*/
+
+function loadCSSCookie() {
+  let cookie = dictCookie();
+
+  let root = document.documentElement;
+  let cookiePopUp = document.getElementById("cookiePopUp");
+  console.log(cookie);
+
+  if (cookie.theme == "dark") {
+    root.style.setProperty("--body-background", "#000");
+    root.style.setProperty("--text-color", "#fff");
+    cookiePopUp.style.border = "solid 2px #fff"
+  } else {
+    root.style.setProperty("--body-background", "#fff");
+    root.style.setProperty("--text-color", "#000");
+    cookiePopUp.style.border = "solid 2px #000"
+  }
+}
+
 // Main Loop \\
 
 async function main() {
   getWeather();
   updateKanjiTime();
+  loadCSSCookie();
 
   setInterval(updateKanjiTime, 1000);
   setInterval(getWeather, 10 * 60 * 1000);
