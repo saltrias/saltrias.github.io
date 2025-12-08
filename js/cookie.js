@@ -12,10 +12,21 @@ export function createCookie(CookieParams = {"theme": "light", "reducedColor": "
   // input = dict
   let maxAge = 60 * 60 * 24 * 365 * 3; // too ambitious i know
 
-  document.cookie = `themeLoaded=false; path=/; max-age=${maxAge}`
   document.cookie = `cookiesAccepted=true; path=/; max-age=${maxAge}`;
   document.cookie = `theme=${CookieParams.theme}; path=/; max-age=${maxAge}`;
   document.cookie = `reducedColor=${CookieParams.reducedColor}; path=/; max-age=${maxAge}`;
+}
+
+export function loadCookie() {
+  // stupid chatgpt code idkwtfitdoes
+  const cookies = document.cookie.split(";"); // ["name=value", ...]
+  const dict = {};
+
+  cookies.forEach((cookie) => {
+    const [name, value] = cookie.trim().split("=");
+    dict[name] = value;
+  });
+  return dict;
 }
 
 export function initCookies() {

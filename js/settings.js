@@ -1,4 +1,4 @@
-import { createCookie } from "./cookie.js";
+import { createCookie, loadCookie } from "./cookie.js";
 
 let darkModeRadio = document.getElementById("DarkModeRadio");
 let lightModeRadio = document.getElementById("LightModeRadio");
@@ -9,16 +9,33 @@ let applyChangesBtn = document.getElementById("ApplyChanges");
 let cTheme;
 let cReducedColorCheckbox;
 
+function preloadCookies() {
+  let cookie = loadCookie();
+  console.log(cookie);
+
+  if (cookie.theme == "dark") {
+    darkModeRadio.checked = true;
+  }
+  else {
+    lightModeRadio.checked = true;
+  }
+
+  if (cookie.reducedColor == "true") {
+    reducedColorCheckbox.checked = true;
+  }
+}
+
 function createCookieParams() {
   let dict = {};
 
   if (darkModeRadio.checked) {
     cTheme = "dark";
-  } else {
+  }
+  if (lightModeRadio.checked) {
     cTheme = "light";
   }
   if (reducedColorCheckbox.checked) {
-    cReducedColorCheckbox = "true";
+    cReducedColorCheckbox = "true"; 
   } else {
     cReducedColorCheckbox = "false";
   }
@@ -33,10 +50,11 @@ function createCookieParams() {
 
 applyChangesBtn.onclick = function () {
   let cookieParams = createCookieParams();
-  console.log(cookieParams)
   createCookie(cookieParams);
 };
 
 /* let CookieParams = {
   "theme": ""
 }; */
+
+document.addEventListener("DOMContentLoaded", preloadCookies);

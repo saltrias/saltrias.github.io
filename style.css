@@ -125,36 +125,32 @@ Cookie Section
   gap: 5px;
 }
 
-#kanjiTime span {
-  font-size: 24px;
-}
-
 #kanjiYear {
-  color: hsl(0, 80%, 60%) !important;
+  color: var(--kanji-year-color);
 }
 
 #kanjiMonth {
-  color: hsl(60, 80%, 60%) !important;
+  color: var(--kanji-month-color);
 }
 
 #kanjiDay {
-  color: hsl(120, 80%, 60%) !important;
+  color: var(--kanji-day-color);
 }
 
 #kanjiHour {
-  color: hsl(180, 80%, 60%) !important;
+  color: var(--kanji-hour-color);
 }
 
 #kanjiMinute {
-  color: hsl(240, 80%, 60%) !important;
+  color: var(--kanji-minute-color);
 }
 
 #kanjiSecond {
-  color: hsl(300, 80%, 60%) !important; /* ihave to do this*/
+  color: var(--kanji-second-color);
 }
 
-.reduced-color {
-  color: #fff !important;
+#kanjiTime span {
+  font-size: 24px;
 }
 
 /*/\/\/\/\/\/*\
