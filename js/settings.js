@@ -1,4 +1,5 @@
 import { createCookie, loadCookie } from "./cookie.js";
+import { loadCSSCookie } from "./theme.js";
 
 let darkModeRadio = document.getElementById("DarkModeRadio");
 let lightModeRadio = document.getElementById("LightModeRadio");
@@ -11,7 +12,7 @@ let cReducedColorCheckbox;
 
 function preloadCookies() {
   let cookie = loadCookie();
-  console.log(cookie);
+  // console.log(cookie);
 
   if (cookie.theme == "dark") {
     darkModeRadio.checked = true;

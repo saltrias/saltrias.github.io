@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body data-page="settingsPage">
     <div id="settings">
       <div id="ThemeCheckbox">
         <input type="radio" id="DarkModeRadio" name="theme" />
@@ -15,13 +16,13 @@
         <label for="LightModeRadio">Light Mode</label>
       </div>
       <div id="ReducedColor">
-        <input type="checkbox" id="ReducedColorCheckbox"/>
+        <input type="checkbox" id="ReducedColorCheckbox" />
         <label for="checkbox">Reduced Color</label>
       </div>
     </div>
 
     <button id="ApplyChanges">apply changes</button>
-    <link rel="stylesheet" href="style.css" />
     <script type="module" src="../js/settings.js"></script>
+    <script type="module" src="../js/theme.js"></script>
   </body>
 </html>

@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>assets</title>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body data-page="assetViewerPage">
     <h2>Image viewer</h2>
     <img src="/assets/images/home-image.png" alt="" id="image" />
     <p id="linusScare"></p>
@@ -17,31 +18,7 @@
       <button id="RandomButton">random</button>
       <!-- thou shalt put everything in js/ -->
       <script src="../../js/imageViewer.js"></script>
+      <script type="module" src="../../js/theme.js""></script>
     </div>
-    <style>
-      body {
-        overflow-x: hidden;
-      }
-      #buttons {
-        position: absolute;
-        display: flex;
-        bottom: 0;
-        width: 100%;
-        justify-content: space-evenly;
-        margin: 0;
-      }
-      #buttons > * {
-        width: 200px;
-        height: 200px;
-        border-radius: 20px;
-        /* margin: auto; */
-      }
-
-      #image {
-        max-width: 200px;
-        display: block;
-        margin-bottom: 10px;
-      }
-    </style>
   </body>
 </html>

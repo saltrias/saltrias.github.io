@@ -18,6 +18,7 @@ async function loadImages() {
   try {
     const response = await fetch("image-list.json");
     imageList = await response.json();
+    console.log(imageList)
     console.log(imageList.length + " images loaded");
   } catch (err) {
     console.log("uh oh somehing happened: " + err);

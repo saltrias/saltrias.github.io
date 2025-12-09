@@ -11,7 +11,7 @@ body {
   justify-content: center;
   margin: 0;
   padding: 0;
-  background-color: var(--body-background);
+  background-color: var(--background-color);
 }
 
 .wrapper {
@@ -89,16 +89,16 @@ Cookie Section
   max-height: 100px;
 }
 
-#centerRow {
+#weatherCenterRow {
   flex: 0 auto;
   max-width: 75px;
 }
 
-#centerRow img {
+#weatherCenterRow img {
   width: 80px;
 }
 
-#rightRow {
+#weatherRightRow {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -106,9 +106,22 @@ Cookie Section
   min-width: 175px;
 }
 
-#rightRow p {
+#weatherRightRow p {
   text-align: left;
 }
+
+#weatherWindSpeed {
+  color: var(--weather-wind-speed-color);
+}
+
+#weatherWindDirection {
+  color: var(--weather-wind-direction-color);
+}
+
+#weatherElevation {
+  color: var(--weather-elevation-color);
+}
+
 
 /*
 >>Kanji>>>>>>>>>>>>

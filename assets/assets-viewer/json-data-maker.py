@@ -12,7 +12,7 @@ import json
 # -----------------------------------------------
 
 # please make sure you are in /assets
-# TODO: organize your shit with folders
+# doneTODO: organize your shit with folders
 # imageList = os.listdir("../images") # makes list from directory above
 
 listString = subprocess.run(["find", "../images", "-type", "f"], capture_output=True, text=True)
