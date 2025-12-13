@@ -163,10 +163,25 @@ Cookie Section
 }
 
 #kanjiTime span {
-  font-size: 24px;
+  font-size: 20px;
 }
 
-/*/\/\/\/\/\/*\
-/|Animations!|/
-\*\/\/\/\/\/\*/
+/*\/\/\/\/\/\/\*\
+|*Main Content!*|
+\*\/\/\/\/\/\/\*/
 
+#mainContent {
+  display: flex;
+}
+
+#sidebar {
+  flex: 1;
+}
+
+#sidebarRandom {
+  font-size: 20px;
+}
+
+#content {
+  flex: 3;
+}

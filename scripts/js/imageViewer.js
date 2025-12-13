@@ -11,12 +11,12 @@ let currentIndex = 0;
 let ImageViewer = document.getElementById("image");
 let imageName;
 let path;
-let linusChance = 1 / 100; // hehehehe..
+let linusChance = 1 / 1e4; // hehehehe..
 let linusScareText = document.getElementById("linusScare");
 
 async function loadImages() {
   try {
-    const response = await fetch("image-list.json");
+    const response = await fetch("../../scripts/json/image-list.json");
     imageList = await response.json();
     console.log(imageList)
     console.log(imageList.length + " images loaded");

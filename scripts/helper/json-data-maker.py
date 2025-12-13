@@ -1,4 +1,3 @@
-import os
 import subprocess
 import json
 
@@ -11,22 +10,22 @@ import json
 # | -al                                         |
 # -----------------------------------------------
 
-# please make sure you are in /assets
-# doneTODO: organize your shit with folders
+# please make sure you are in /assets TODO: please fix this im too lazy rn
+# TODO: organize your shit with folders
 # imageList = os.listdir("../images") # makes list from directory above
 
-listString = subprocess.run(["find", "../images", "-type", "f"], capture_output=True, text=True)
+listString = subprocess.run(["find", "../../", "-name", "*.png", "-o", "-name", "*.jpg"], capture_output=True, text=True)
 
 imageList = listString.stdout.strip().splitlines()
 
-if "'../images/linus.jpeg'" in imageList:
-  imageList.remove("'../images/linus.jpeg'")
+if "'../../assets/images/linus.jpeg'" in imageList:
+  imageList.remove("'../../assets/images/linus.jpeg'")
 
 imageList.sort()
 
 print("writing json file...")
 
-with open("image-list.json", "w") as f:
+with open("../json/image-list.json", "w") as f:
   json.dump(imageList, f, indent=2) # indent = good i think
 
 print("done!")
