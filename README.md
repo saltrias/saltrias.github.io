@@ -1,6 +1,18 @@
 # saltrias.github.io
 
-Welcome to my github repo idk what to tell you
+Welcome to my github repo!!!!! please feel free to do anything
+
+### Comment guide
+
+please make the comments sound like youre a 
+
+1. quarter french
+2. quarter spanish
+3. half stupid
+
+#### la example
+
+ze function is for element.GetJaElementByIddd() 
 
 ### Contributions and whatever
 

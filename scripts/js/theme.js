@@ -1,13 +1,15 @@
 import { loadCookie } from "./cookie.js";
+import { map, rounded } from "../helper/utils.js";
 
 export function loadCSSCookie() {
-  const pageType = document.body.dataset.page; // this is stupid
+  const pageType = document.body.id; // this is NOT stupid
 
   let cookie = loadCookie() || {};
   let root = document.documentElement;
 
   const theme = cookie.theme || "light";
   const reducedColor = cookie.reducedColor || "false";
+  let d = new Date();
 
   function mainPage() {
     let kanjiTimeDiv = document.getElementById("kanjiTime");
@@ -46,7 +48,6 @@ export function loadCSSCookie() {
         });
       }
 
-      
       for (let i = 0; i < weatherList.length; i++) {
         const el = weatherList[i];
         weatherRightRowDiv.style.setProperty(`--${el}-color`, `hsl(${150 + i * 30}, 80%, 50%)`);
@@ -61,12 +62,37 @@ export function loadCSSCookie() {
       if (theme == "light") weatherSetAllColors("000");
     }
 
+    function randomButtonSetColors() {
+      let sidebar = document.getElementById("sidebar");
+
+      function randomButtonSetColor(color) {
+        sidebar.style.setProperty("--sidebar-random-button-color", color);
+        console.log(color)
+      }
+
+      let mil = d.getMilliseconds();
+      let sec = d.getSeconds();
+
+      let secAndMil = sec * 1000 + mil;
+      let hColorValue = rounded(map(secAndMil, 0, 60000, 0, 360));
+      randomButtonSetColor(`hsl(${hColorValue}, 70%, 50%)`);
+
+      if (reducedColor == "true") {
+        if (theme == "light") {
+          randomButtonSetColor("#000");
+        } else {
+          randomButtonSetColor("#fff");
+        }
+      }
+    }
+
     if (theme == "light") {
       root.style.setProperty("--background-color", "#fff");
       root.style.setProperty("--text-color", "#000");
       if (cookiePopUp) cookiePopUp.style.border = "solid 2px #000";
       kanjiTimeSetColors();
       weatherSetColors();
+      randomButtonSetColors();
     } else {
       root.style.setProperty("--background-color", "#000");
       root.style.setProperty("--text-color", "#fff");
@@ -75,6 +101,7 @@ export function loadCSSCookie() {
       if (cookiePopUp) cookiePopUp.style.border = "solid 2px #fff";
       kanjiTimeSetColors();
       weatherSetColors();
+      randomButtonSetColors();
     }
   }
 
@@ -125,7 +152,7 @@ export function loadCSSCookie() {
       postsPage();
       break;
     default:
-      console.log("bitch wtf is u talking about");
+      console.warn("le is stupid wtf is this page??");
   }
 }
 

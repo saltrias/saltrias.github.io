@@ -180,6 +180,8 @@ Cookie Section
 
 #sidebarRandom {
   font-size: 20px;
+  color: var(--sidebar-random-button-color) !important;
+  text-decoration: none;
 }
 
 #content {
