@@ -9,7 +9,12 @@ export function loadCSSCookie() {
 
   const theme = cookie.theme || "light";
   const reducedColor = cookie.reducedColor || "false";
-  let d = new Date();
+  // let d = new Date();
+
+  // thou shalt put all variables in :root
+  function setProperty(cssVar, val) {
+    root.style.setProperty(cssVar, val);
+  }
 
   function mainPage() {
     let kanjiTimeDiv = document.getElementById("kanjiTime");
@@ -20,13 +25,13 @@ export function loadCSSCookie() {
 
       function kanjiTimeSetAllColors(color) {
         kanjiTimeList.forEach((el) => {
-          kanjiTimeDiv.style.setProperty(`--kanji-${el}-color`, color);
+          setProperty(`--kanji-${el}-color`, color);
         });
       }
 
       for (let i = 0; i < kanjiTimeList.length; i++) {
         const el = kanjiTimeList[i];
-        kanjiTimeDiv.style.setProperty(`--kanji-${el}-color`, `hsl(${i * 60}, 80%, 60%)`);
+        setProperty(`--kanji-${el}-color`, `hsl(${i * 60}, 80%, 60%)`);
       }
 
       if (reducedColor == "true") {
@@ -40,17 +45,16 @@ export function loadCSSCookie() {
 
     function weatherSetColors() {
       let weatherList = ["weather-wind-speed", "weather-wind-direction", "weather-elevation"];
-      let weatherRightRowDiv = document.getElementById("weatherRightRow");
 
       function weatherSetAllColors(color) {
         weatherList.forEach((el) => {
-          weatherRightRowDiv.style.setProperty(`--${el}-color`, color);
+          setProperty(`--${el}-color`, color);
         });
       }
 
       for (let i = 0; i < weatherList.length; i++) {
         const el = weatherList[i];
-        weatherRightRowDiv.style.setProperty(`--${el}-color`, `hsl(${150 + i * 30}, 80%, 50%)`);
+        setProperty(`--${el}-color`, `hsl(${150 + i * 30}, 80%, 50%)`);
       }
 
       if (reducedColor == "true") {
@@ -60,42 +64,32 @@ export function loadCSSCookie() {
       }
 
       if (theme == "light") weatherSetAllColors("000");
+      
     }
 
     function randomButtonSetColors() {
-      let sidebar = document.getElementById("sidebar");
-
-      function randomButtonSetColor(color) {
-        sidebar.style.setProperty("--sidebar-random-button-color", color);
-        console.log(color)
-      }
-
-      let mil = d.getMilliseconds();
-      let sec = d.getSeconds();
-
-      let secAndMil = sec * 1000 + mil;
-      let hColorValue = rounded(map(secAndMil, 0, 60000, 0, 360));
-      randomButtonSetColor(`hsl(${hColorValue}, 70%, 50%)`);
-
+      let randomLink = document.getElementById("sidebarRandom");
+      console.log(reducedColor, theme)
       if (reducedColor == "true") {
+        randomLink.classList.remove("rainbowText");
         if (theme == "light") {
-          randomButtonSetColor("#000");
+          setProperty("--random-button-color", "#000")
         } else {
-          randomButtonSetColor("#fff");
+          setProperty("--random-button-color", "#fff");
         }
       }
     }
-
+    
     if (theme == "light") {
-      root.style.setProperty("--background-color", "#fff");
-      root.style.setProperty("--text-color", "#000");
+      setProperty("--background-color", "#fff");
+      setProperty("--text-color", "#000");
       if (cookiePopUp) cookiePopUp.style.border = "solid 2px #000";
       kanjiTimeSetColors();
       weatherSetColors();
       randomButtonSetColors();
     } else {
-      root.style.setProperty("--background-color", "#000");
-      root.style.setProperty("--text-color", "#fff");
+      setProperty("--background-color", "#000");
+      setProperty("--text-color", "#fff");
       // if you remove this if
       // it just breaks im sorry
       if (cookiePopUp) cookiePopUp.style.border = "solid 2px #fff";
@@ -108,22 +102,22 @@ export function loadCSSCookie() {
   function settingsPage() {
     if (theme == "light") {
       // console.log("is light");
-      root.style.setProperty("--background-color", "#fff");
-      root.style.setProperty("--text-color", "#000");
+      setProperty("--background-color", "#fff");
+      setProperty("--text-color", "#000");
     } else {
       // console.log("is dark");
-      root.style.setProperty("--background-color", "#000");
-      root.style.setProperty("--text-color", "#fff");
+      setProperty("--background-color", "#000");
+      setProperty("--text-color", "#fff");
     }
   }
 
   function assetViewer() {
     if (theme == "light") {
-      root.style.setProperty("--background-color", "#fff");
-      root.style.setProperty("--text-color", "#000");
+      setProperty("--background-color", "#fff");
+      setProperty("--text-color", "#000");
     } else {
-      root.style.setProperty("--background-color", "#000");
-      root.style.setProperty("--text-color", "#fff");
+      setProperty("--background-color", "#000");
+      setProperty("--text-color", "#fff");
     }
   }
 
