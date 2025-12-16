@@ -17,14 +17,12 @@ export function loadCSSCookie() {
   }
 
   function applyTheme() {
-    console.log("le is setting za theme!!")
     if (theme == "light") {
       // i know i can just varslop this
       // but idc mannn
       setProperty("--background-color", "#fff");
       setProperty("--text-color", "#000");
     } else {
-      console.log("le is setting za theme dark!!")
       setProperty("--background-color", "#03030d"); // finetuned from an IPS thinkpad
       setProperty("--text-color", "#fff");
     }
@@ -83,7 +81,6 @@ export function loadCSSCookie() {
 
     function randomButtonSetColors() {
       let randomLink = document.getElementById("sidebarRandom");
-      // console.log(reducedColor, theme)
       if (reducedColor == "true") {
         randomLink.classList.remove("rainbowText");
         if (theme == "light") {
@@ -113,11 +110,9 @@ export function loadCSSCookie() {
 
   function settingsPage() {
     if (theme == "light") {
-      // console.log("is light");
       setProperty("--background-color", "#fff");
       setProperty("--text-color", "#000");
     } else {
-      // console.log("is dark");
       setProperty("--background-color", "#000");
       setProperty("--text-color", "#fff");
     }
@@ -153,7 +148,6 @@ export function loadCSSCookie() {
 
     case "postsPage":
       postsPage();
-      console.log("la posts page");
       break;
     default:
       console.warn("le is stupid wtf is this page??");

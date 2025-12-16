@@ -1,11 +1,11 @@
-let htmlList;
+/* let htmlList;
 
 async function loadHTMLList() {
   try {
     const response = await fetch("scripts/json/html-list.json");
     htmlList = await response.json();
   } catch (err) {
-    console.error("uh oh something happened:", err);
+    Aconsaole.error("uh oh something happened:", err);
   }
 }
 
@@ -18,4 +18,4 @@ export async function randomButton() {
   const link = htmlList[randIndex];
 
   randomButtonElem.href = link;
-}
+} */
