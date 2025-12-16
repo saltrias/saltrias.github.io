@@ -5,8 +5,6 @@ import { loadCSSCookie } from "./theme.js";
 import { randomButton } from "./randomButton.js";
 
 async function main() {
-  let CSSChangeRate = 1000/60;
-
   getWeather();
   updateKanjiTime();
   initCookies();
@@ -15,7 +13,6 @@ async function main() {
 
   setInterval(updateKanjiTime, 1000);
   setInterval(getWeather, 15 * 60 * 1000);
-  setInterval(loadCSSCookie, CSSChangeRate);
 }
 
 document.addEventListener("DOMContentLoaded", main);

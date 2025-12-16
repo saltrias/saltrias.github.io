@@ -1,5 +1,5 @@
 import { loadCookie } from "./cookie.js";
-import { map, rounded } from "../helper/utils.js";
+// import { map, rounded } from "../helper/utils.js";
 
 export function loadCSSCookie() {
   const pageType = document.body.id; // this is NOT stupid
@@ -7,7 +7,7 @@ export function loadCSSCookie() {
   let cookie = loadCookie() || {};
   let root = document.documentElement;
 
-  const theme = cookie.theme || "light";
+  const theme = "dark";
   const reducedColor = cookie.reducedColor || "false";
   // let d = new Date();
 
@@ -15,6 +15,20 @@ export function loadCSSCookie() {
   function setProperty(cssVar, val) {
     root.style.setProperty(cssVar, val);
   }
+
+  function applyTheme() {
+    console.log("le is setting za theme!!")
+    if (theme == "light") {
+      // i know i can just varslop this
+      // but idc mannn
+      setProperty("--background-color", "#fff");
+      setProperty("--text-color", "#000");
+    } else {
+      console.log("le is setting za theme dark!!")
+      setProperty("--background-color", "#03030d"); // finetuned from an IPS thinkpad
+      setProperty("--text-color", "#fff");
+    }
+  };
 
   function mainPage() {
     let kanjiTimeDiv = document.getElementById("kanjiTime");
@@ -69,7 +83,7 @@ export function loadCSSCookie() {
 
     function randomButtonSetColors() {
       let randomLink = document.getElementById("sidebarRandom");
-      console.log(reducedColor, theme)
+      // console.log(reducedColor, theme)
       if (reducedColor == "true") {
         randomLink.classList.remove("rainbowText");
         if (theme == "light") {
@@ -81,15 +95,13 @@ export function loadCSSCookie() {
     }
     
     if (theme == "light") {
-      setProperty("--background-color", "#fff");
-      setProperty("--text-color", "#000");
+      applyTheme();
       if (cookiePopUp) cookiePopUp.style.border = "solid 2px #000";
       kanjiTimeSetColors();
       weatherSetColors();
       randomButtonSetColors();
     } else {
-      setProperty("--background-color", "#000");
-      setProperty("--text-color", "#fff");
+      applyTheme();
       // if you remove this if
       // it just breaks im sorry
       if (cookiePopUp) cookiePopUp.style.border = "solid 2px #fff";
@@ -112,18 +124,15 @@ export function loadCSSCookie() {
   }
 
   function assetViewer() {
-    if (theme == "light") {
-      setProperty("--background-color", "#fff");
-      setProperty("--text-color", "#000");
-    } else {
-      setProperty("--background-color", "#000");
-      setProperty("--text-color", "#fff");
-    }
+    applyTheme();
   }
 
-  function languagePage() {} // TODO: please do rest of them
-
-  function postsPage() {}
+  function languagePage() { // DONE: please do rest of them
+    applyTheme();
+  } 
+  function postsPage() {
+    applyTheme();
+  }
 
   switch (pageType) {
     case "mainPage":
@@ -144,6 +153,7 @@ export function loadCSSCookie() {
 
     case "postsPage":
       postsPage();
+      console.log("la posts page");
       break;
     default:
       console.warn("le is stupid wtf is this page??");
