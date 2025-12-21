@@ -1,0 +1,22 @@
+:root {
+  --background-color: #03030d;
+  --text-color: white;
+  background-color: var(--background-color);
+  color: var(--text-color) !important;
+  font-family: 'Inter', 'Noto Sans JP';
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('inter.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('notosjp.woff2') format('woff2');
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+}
