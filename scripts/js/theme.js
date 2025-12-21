@@ -7,8 +7,10 @@ export function loadCSSCookie() {
   let cookie = loadCookie() || {};
   let root = document.documentElement;
 
+  // I am still putting this cause
+  // If i remove these variables everything just breaks
   const theme = "dark";
-  const reducedColor = cookie.reducedColor || "false";
+  const reducedColor = "false";
   // let d = new Date();
 
   // thou shalt put all variables in :root
@@ -16,17 +18,21 @@ export function loadCSSCookie() {
     root.style.setProperty(cssVar, val);
   }
 
+  // I am terribly sorry if you prefer light mode
+  // I simply do not have the resources to continue this feature
+  // Well i might revive this sometime but right now, its too complicated
+
   function applyTheme() {
-    if (theme == "light") {
-      // i know i can just varslop this
-      // but idc mannn
-      setProperty("--background-color", "#fff");
-      setProperty("--text-color", "#000");
-    } else {
-      setProperty("--background-color", "#03030d"); // finetuned from an IPS thinkpad
-      setProperty("--text-color", "#fff");
-    }
-  };
+    // if (theme == "light") {
+    //   // i know i can just varslop this
+    //   // but idc mannn
+    //   setProperty("--background-color", "#fff");
+    //   setProperty("--text-color", "#000");
+    // } else {
+    setProperty("--background-color", "#03030d"); // finetuned from an IPS thinkpad
+    setProperty("--text-color", "#fff");
+    // }
+  }
 
   function mainPage() {
     let kanjiTimeDiv = document.getElementById("kanjiTime");
@@ -56,7 +62,11 @@ export function loadCSSCookie() {
     }
 
     function weatherSetColors() {
-      let weatherList = ["weather-wind-speed", "weather-wind-direction", "weather-elevation"];
+      let weatherList = [
+        "weather-wind-speed",
+        "weather-wind-direction",
+        "weather-elevation",
+      ];
 
       function weatherSetAllColors(color) {
         weatherList.forEach((el) => {
@@ -76,56 +86,9 @@ export function loadCSSCookie() {
       }
 
       if (theme == "light") weatherSetAllColors("000");
-      
     }
-
-    function randomButtonSetColors() {
-      let randomLink = document.getElementById("sidebarRandom");
-      if (reducedColor == "true") {
-        randomLink.classList.remove("rainbowText");
-        if (theme == "light") {
-          setProperty("--random-button-color", "#000")
-        } else {
-          setProperty("--random-button-color", "#fff");
-        }
-      }
-    }
-    
-    if (theme == "light") {
-      applyTheme();
-      if (cookiePopUp) cookiePopUp.style.border = "solid 2px #000";
-      kanjiTimeSetColors();
-      weatherSetColors();
-      randomButtonSetColors();
-    } else {
-      applyTheme();
-      // if you remove this if
-      // it just breaks im sorry
-      if (cookiePopUp) cookiePopUp.style.border = "solid 2px #fff";
-      kanjiTimeSetColors();
-      weatherSetColors();
-      randomButtonSetColors();
-    }
-  }
-
-  function settingsPage() {
-    if (theme == "light") {
-      setProperty("--background-color", "#fff");
-      setProperty("--text-color", "#000");
-    } else {
-      setProperty("--background-color", "#000");
-      setProperty("--text-color", "#fff");
-    }
-  }
-
-  function assetViewer() {
-    applyTheme();
-  }
-
-  function languagePage() { // DONE: please do rest of them
-    applyTheme();
-  } 
-  function postsPage() {
+    kanjiTimeSetColors();
+    weatherSetColors();
     applyTheme();
   }
 
@@ -134,23 +97,10 @@ export function loadCSSCookie() {
       mainPage();
       break;
 
-    case "settingsPage":
-      settingsPage();
-      break;
-
-    case "assetViewerPage":
-      assetViewer();
-      break;
-
-    case "languagePage":
-      languagePage();
-      break;
-
-    case "postsPage":
-      postsPage();
-      break;
     default:
       console.warn("le is stupid wtf is this page??");
+      applyTheme();
+      break;
   }
 }
 

@@ -2,6 +2,7 @@
   --background-color: white;
   --text-color: black;
   color: var(--text-color) !important;
+  font-family: 'Inter', 'Noto Sans JP';
 }
 
 html,
@@ -36,37 +37,6 @@ body {
   font-size: 24px;
   text-decoration: none;
   color: var(--text-color) !important;
-}
-
-/* 
-\\\\\\\\\\\\\\
-Cookie Section
-//////////////
-*/
-
-#cookiePopUp {
-  width: 300px;
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  border: 2px solid black;
-}
-
-#cookieText {
-  font-size: 24px;
-  text-align: center;
-}
-
-#cookieButtons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-
-#cookieButtons > button {
-  width: 80px;
-  height: 40px;
 }
 
 /*///////////////////
@@ -178,6 +148,8 @@ Cookie Section
   flex: 1;
 }
 
+/*Sidebar!*/
+
 #sidebarRandom {
   font-size: 20px;
   text-decoration: none;
@@ -188,11 +160,18 @@ Cookie Section
   flex: 3;
 }
 
+#sidebarCalendar {
+  width: 200px;
+  aspect-ratio: 1 / 1;
+}
+
 .rainbowText {
   animation: rainbow 10s infinite;
 }
 
-/*animation!*/
+/**********\
+|The @zone!| 
+\**********/
 
 @keyframes rainbow {
   0%   { color: red; }
@@ -205,3 +184,16 @@ Cookie Section
   100% { color: red; }
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('inter.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('notosjp.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
