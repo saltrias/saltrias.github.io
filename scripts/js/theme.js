@@ -62,11 +62,7 @@ export function loadCSSCookie() {
     }
 
     function weatherSetColors() {
-      let weatherList = [
-        "weather-wind-speed",
-        "weather-wind-direction",
-        "weather-elevation",
-      ];
+      let weatherList = ["weather-wind-speed", "weather-wind-direction", "weather-elevation"];
 
       function weatherSetAllColors(color) {
         weatherList.forEach((el) => {
@@ -87,9 +83,22 @@ export function loadCSSCookie() {
 
       if (theme == "light") weatherSetAllColors("000");
     }
+
+    function setFaviconColor() {
+      // if you think i wrote this by myself you are crazy
+      // i yoinked this out of stackoverflow
+      let favicon = document.getElementById("favicon");
+      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        favicon.href = "favicon_white.ico"; 
+      } else {
+        favicon.href = "favicon_dark.ico"
+      }
+    }
+
     kanjiTimeSetColors();
     weatherSetColors();
     applyTheme();
+    // setFaviconColor();
   }
 
   switch (pageType) {

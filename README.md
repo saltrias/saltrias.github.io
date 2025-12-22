@@ -2,18 +2,20 @@
 
 Welcome to my github repo!!!!! please feel free to do anything
 
-### Comment guide
+## Questions
 
-please make the comments sound like youre a 
+If you have any suggestions to add to my website, please feel free to uhh contact ig idk but please dont email me at like 3 in the morning
 
-1. quarter french
-2. quarter spanish
-3. half stupid
+## Suggestions 
 
-#### la example
+I am *aware* of these suggestions below, so if you contact me about these ideas i **WILL** ignore.
 
-ze function is for element.GetJaElementByIddd() 
+- Change weather location
+- Changing theme <sub>(I AM WORKING ON IT)</sub>
+- add more content
+- refactor like 100% of my code
+- Using the latest JS/TS/JSX/TSX framework 
 
-### Contributions and whatever
+### Dos and Donts 
 
-Please feel free to make any contributions to this website i guess just send me a pr?? idk just do your thing and ill figure out if itll work or not
+uhh idk go run for the damn hills or something
