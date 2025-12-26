@@ -1,13 +1,15 @@
 import { getWeather } from "./weather.js";
 import { updateKanjiTime } from "./kanjiTime.js";
-import { loadCSSCookie } from "./theme.js";
+import { initCalendar } from "./calendar.js";
+// import { loadCSSCookie } from "./theme.js";
 // import { initCookies } from "./cookie.js";
 // import { randomButton } from "./randomButton.js";
 
 async function main() {
   getWeather();
   updateKanjiTime();
-  loadCSSCookie();
+  initCalendar();
+  // loadCSSCookie();
   // initCookies();
   // randomButton();
 
