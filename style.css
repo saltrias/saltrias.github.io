@@ -9,7 +9,7 @@ body {
 }
 
 .wrapper {
-  width: 60%;
+  width: 70%;
   margin-top: 20px;
 }
 
@@ -154,7 +154,6 @@ body {
   color: var(--random-button-color);
 }
 
-
 #sidebarCalendar {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -166,6 +165,12 @@ body {
   flex-direction: column;
 }
 
+#sidebarCalendarMonthYear {
+  font-size: 35px;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 #sidebarCalendarDayNames {
   height: 25px;
@@ -174,11 +179,15 @@ body {
   align-items: center;
 }
 
-#sidebarCalendarMonthYear {
-  font-size: 35px;
-  margin: 0;
-  margin-left: auto;
-  margin-right: auto;
+#sidebarCalendarDays {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.sidebarCalendarColumn {
+  display: flex;
+  flex-direction: column;
 }
 
 .dayName {
@@ -194,12 +203,28 @@ body {
 \**********/
 
 @keyframes rainbow {
-  0%   { color: red; }
-  14.2857% { color: orange; }
-  28.5714% { color: yellow; }
-  42.8571% { color: green; }
-  57.1428% { color: blue; }
-  71.4285% { color: indigo; }
-  85.7142% { color: violet; }
-  100% { color: red; }
+  0% {
+    color: red;
+  }
+  14.2857% {
+    color: orange;
+  }
+  28.5714% {
+    color: yellow;
+  }
+  42.8571% {
+    color: green;
+  }
+  57.1428% {
+    color: blue;
+  }
+  71.4285% {
+    color: indigo;
+  }
+  85.7142% {
+    color: violet;
+  }
+  100% {
+    color: red;
+  }
 }
