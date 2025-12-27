@@ -40,9 +40,11 @@ export function zellersCongruence(year, month, day) {
   return dayList[h];
 }
 
-export function getAbbreviatedMonth(val) {
-  val++;
-  switch (val) {
+zellersCongruence(2025, 12, 32);
+
+export function getAbbreviatedMonth(mon) {
+  mon++;
+  switch (mon) {
     case 1:
       return "Jan";
     case 2:
@@ -74,14 +76,38 @@ export function getAbbreviatedMonth(val) {
   }
 }
 
-// export function getWeekNumberFromDate(year, month, day) {
-//   let leap = isLeap(year);
-//   let monthDayList = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-//   if (leap) { monthDayList[1] = 29}
-//   let dayOfYear = 0;
+export function getAbbreviatedDay(day) {
+  day++;
+  switch (day) {
+    case 1:
+      return "Mon";
+    case 2:
+      return "Tue";
+    case 3:
+      return "Wed";
+    case 4:
+      return "Thu";
+    case 5:
+      return "Fri";
+    case 6:
+      return "Sat";
+    case 7:
+      return "Sun";
 
-//   for (let i = 0; i < month - 1; i++) {
-//     dayOfYear += monthDayList[i];
-//   }
-//   return dayOfYear + day;
-// }
+    default:
+      console.warn("wtf this day invalid");
+      return "???";
+  }
+}
+
+export function getWeekNumberFromDate(year, month, day) {
+  let leap = isLeap(year);
+  let monthDayList = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  if (leap) { monthDayList[1] = 29}
+  let dayOfYear = 0;
+
+  for (let i = 0; i < month - 1; i++) {
+    dayOfYear += monthDayList[i];
+  }
+  return dayOfYear + day;
+}

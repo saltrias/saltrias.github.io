@@ -139,7 +139,7 @@ body {
 }
 
 #sidebar {
-  flex: 7;
+  flex: 10;
 }
 
 #content {
@@ -172,27 +172,32 @@ body {
   margin-right: auto;
 }
 
-#sidebarCalendarDayNames {
-  height: 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 #sidebarCalendarDays {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  /* border: 2px white solid; */
+}
+
+#sidebarCalendarDays > div {
+  flex: 1;
 }
 
 .sidebarCalendarColumn {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.dayName {
-  font-size: 14px;
+.sidebarCalendarColumn > span {
+  margin-top: 3px;
 }
+/*
+.dayName {
+  font-size: 20px;
+}
+  */
 
 .rainbowText {
   animation: rainbow 10s infinite;
