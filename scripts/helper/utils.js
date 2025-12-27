@@ -40,8 +40,6 @@ export function zellersCongruence(year, month, day) {
   return dayList[h];
 }
 
-zellersCongruence(2025, 12, 32);
-
 export function getAbbreviatedMonth(mon) {
   mon++;
   switch (mon) {
