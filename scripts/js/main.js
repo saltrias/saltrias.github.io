@@ -1,6 +1,6 @@
 import { getWeather } from "./weather.js";
 import { updateKanjiTime } from "./kanjiTime.js";
-import { initCalendar } from "./calendar.js";
+import { loadCalendar } from "./calendar.js";
 // import { loadCSSCookie } from "./theme.js";
 // import { initCookies } from "./cookie.js";
 // import { randomButton } from "./randomButton.js";
@@ -8,7 +8,7 @@ import { initCalendar } from "./calendar.js";
 async function main() {
   getWeather();
   updateKanjiTime();
-  initCalendar();
+  loadCalendar();
   // loadCSSCookie();
   // initCookies();
   // randomButton();

@@ -4,7 +4,6 @@ La Utilitias!!!!
 [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 */
 
-let dayList = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 export function map(val, sta1, sto1, sta2, sto2) {
   return ((val - sta1) / (sto1 - sta1)) * (sto2 - sta2) + sta2;
@@ -40,62 +39,15 @@ export function zellersCongruence(year, month, day) {
   return dayList[h];
 }
 
-export function getAbbreviatedMonth(mon) {
-  mon++;
-  switch (mon) {
-    case 1:
-      return "Jan";
-    case 2:
-      return "Feb";
-    case 3:
-      return "Mar";
-    case 4:
-      return "Apr";
-    case 5:
-      return "May";
-    case 6:
-      return "Jun";
-    case 7:
-      return "Jul";
-    case 8:
-      return "Aug";
-    case 9:
-      return "Sep";
-    case 10:
-      return "Oct";
-    case 11:
-      return "Nov";
-    case 12:
-      return "Dec";
-
-    default:
-      console.warn("wtf this month invalid");
-      return "???";
-  }
+export function getAbbreviatedMonth(val, shr) {
+  let monthList = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  return monthList[val].substring(0, shr);
 }
 
-export function getAbbreviatedDay(day) {
-  day++;
-  switch (day) {
-    case 1:
-      return "Mon";
-    case 2:
-      return "Tue";
-    case 3:
-      return "Wed";
-    case 4:
-      return "Thu";
-    case 5:
-      return "Fri";
-    case 6:
-      return "Sat";
-    case 7:
-      return "Sun";
 
-    default:
-      console.warn("wtf this day invalid");
-      return "???";
-  }
+export function getAbbreviatedDay(val, shr) {
+  let dayList = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  return dayList[val].substring(0, shr);
 }
 
 export function getWeekNumberFromDate(year, month, day) {
