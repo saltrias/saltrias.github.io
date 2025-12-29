@@ -140,7 +140,7 @@ body {
 }
 
 #sidebar {
-  flex: 12;
+  flex: 10;
 }
 
 #content {
@@ -175,6 +175,7 @@ body {
   margin: 0;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 7.5px;
 }
 
 #sidebarCalendarDays {
@@ -202,13 +203,8 @@ body {
 } */
 
 
-#sidebarCalendarDayRow0 {
-  border-right: 2px solid white;
-  margin-right: 5px;
-}
-
-.sidebarCalendarColumn > span {
-  margin-top: 3px;
+.sidebarCalendarDayRow > span {
+  margin-top: 5px;
 }
 /*
 .dayName {

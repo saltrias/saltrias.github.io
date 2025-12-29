@@ -2,7 +2,7 @@ function isLeap(y) {
   return y % 4 == 0 && (y % 100 != 0 || y % 400 == 0);
 }
 
-export function zellersCongruence(year, month, day) {
+function zellersCongruence(year, month, day) {
   // I discovered Date.getDay() after I wrote this function
   // Well whatever i guess
 
@@ -57,17 +57,25 @@ export function getLastDayOfMonth(y, m) {
   return monthDayList[m];
 }
 
-// export function getWeekNumberFromDate(year, month, day) {
-//   let leap = isLeap(year);
-//   let monthDayList = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-//   if (leap) { monthDayList[1] = 29}
-//   let dayOfYear = 0;
+// idk i told chatgpt to write this function
+// dont blame me blame chatgpt
+export function getWeekNumberFromDate(year, month, day) {
+  let leap = isLeap(year);
+  let monthDayList = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  if (leap) monthDayList[1] = 29;
 
-//   for (let i = 0; i < month - 1; i++) {
-//     dayOfYear += monthDayList[i];
-//   }
-//   return dayOfYear + day;
-// }
+  let dayOfYear = 0;
+  for (let i = 0; i < month - 1; i++) {
+    dayOfYear += monthDayList[i];
+  }
+  dayOfYear += day;
+  let D0 = dayOfYear - 1;
+
+  let weekdayJan1 = ((zellersCongruence(year, 1, 1) + 6) % 7) + 1;
+  let offset = (8 - weekdayJan1) % 7;
+
+  return Math.floor((D0 + offset) / 7) + 1;
+}
 
 // I may or may not use this
 // But it's good to have
@@ -92,14 +100,14 @@ export function loadCalendar() {
   monthYearSpan.innerText = `${getAbbreviatedMonth(month, 3)} ${year}`;
 
   // 4. Fill day grid with empty values
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 7; i++) {
     let div = document.createElement("div");
     div.id = `sidebarCalendarDayRow${i}`;
     div.classList.add("sidebarCalendarDayRow");
     for (let j = 0; j < 6; j++) {
       let span = document.createElement("span");
       let text = document.createTextNode("10");
-      span.id = `sidebarCalendarDayRow${i}Column${j}`;
+      span.id = `sidebarCalendarDayX${i}Y${j}`;
       span.appendChild(text);
       div.appendChild(span);
     }
@@ -110,14 +118,10 @@ export function loadCalendar() {
   // 5. Reserve first row for day names
 
   for (let i = 0; i < 7; i++) {
-    let dayName = document.getElementById(`sidebarCalendarDayRow${i + 1}Column0`);
+    let dayName = document.getElementById(`sidebarCalendarDayX${i}Y0`);
     dayName.classList.add("dayName");
     dayName.innerHTML = getAbbreviatedDay(i, 3);
   }
-
-  let weekNumberSpan = document.getElementById(`sidebarCalendarDayRow0Column0`);
-  weekNumberSpan.classList.add("dayName");
-  weekNumberSpan.innerText = "W#";
 
   // 6. Make array from 1 to last date of month
   let monthDaysList = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -144,12 +148,25 @@ export function loadCalendar() {
   }
 
   // 8. Make dayMatrix an actual matrix
-  let tmp = dayMatrix
+  let tmp = dayMatrix;
   dayMatrix = [];
   for (let i = 0; i < 5; i++) {
-    let list = tmp.slice(i*7, i*7+7);
-    dayMatrix.push(list);  
+    let list = tmp.slice(i * 7, i * 7 + 7);
+    dayMatrix.push(list);
   }
 
-  // now you just render it!
+  // 9. Display dayMatrix to the spans
+
+  for (let i = 0; i < dayMatrix.length; i++) {
+    let list = dayMatrix[i];
+
+    for (let j = 0; j < list.length; j++) {
+      let el = list[j];
+      let elSpan = document.getElementById(`sidebarCalendarDayX${j}Y${i + 1}`);
+      elSpan.innerText = el;
+      if (el == 0) {
+        elSpan.classList.add("hidden");
+      }
+    }
+  }
 }
