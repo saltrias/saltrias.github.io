@@ -140,11 +140,11 @@ body {
 }
 
 #sidebar {
-  flex: 8;
+  flex: 12;
 }
 
 #content {
-  flex: 23;
+  flex: 26;
 }
 
 /*Sidebar!*/
@@ -166,6 +166,10 @@ body {
   flex-direction: column;
 }
 
+.dayName {
+  font-size: 16px;
+}
+
 #sidebarCalendarMonthYear {
   font-size: 35px;
   margin: 0;
@@ -178,17 +182,29 @@ body {
   flex-direction: row;
   justify-content: space-around;
   /* border: 2px white solid; */
+  row-gap: 5px;
 }
 
 #sidebarCalendarDays > div {
   flex: 1;
 }
 
-.sidebarCalendarColumn {
+.sidebarCalendarDayRow {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 5px;
+}
+
+/* .sidebarCalendarDayRow > span {
+  
+} */
+
+
+#sidebarCalendarDayRow0 {
+  border-right: 2px solid white;
+  margin-right: 5px;
 }
 
 .sidebarCalendarColumn > span {

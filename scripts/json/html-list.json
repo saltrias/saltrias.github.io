@@ -1,9 +1,9 @@
 [
-  "settings/settings.html",
-  "posts/2025-12-07-switching-to-linux/index.html",
+  "language/index.html",
+  "404.html",
   "posts/thanks.html",
   "posts/index.html",
+  "emporium/emporium.html",
   "assets/assets-viewer/index.html",
-  "language/index.html",
   "index.html"
 ]
