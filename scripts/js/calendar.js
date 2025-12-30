@@ -120,7 +120,7 @@ export function loadCalendar() {
   for (let i = 0; i < 7; i++) {
     let dayName = document.getElementById(`sidebarCalendarDayX${i}Y0`);
     dayName.classList.add("dayName");
-    dayName.innerHTML = getAbbreviatedDay(i, 3);
+    dayName.innerHTML = getAbbreviatedDay(i, 1);
   }
 
   // 6. Make array from 1 to last date of month
