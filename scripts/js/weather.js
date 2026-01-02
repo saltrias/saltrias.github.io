@@ -97,7 +97,7 @@ export async function getWeather() {
     const response = await fetch(url);
 
     if (!response.ok) {
-      console.log(`bitch it said ${response.status}`);
+      console.log(`le uh oh it sent ${response.status}`);
     }
 
     let data = await response.json();

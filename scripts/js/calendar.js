@@ -90,7 +90,8 @@ export function loadCalendar() {
   let d = new Date();
   let year = d.getFullYear();
   let month = d.getMonth();
-  let day = d.getDay();
+  let day = d.getDate();
+  let currentWeekday = zellersCongruence(year, month+1, day);
 
   // 2. Define DOM Elements
   let monthYearSpan = document.getElementById("sidebarCalendarMonthYear");
@@ -166,7 +167,11 @@ export function loadCalendar() {
       elSpan.innerText = el;
       if (el == 0) {
         elSpan.classList.add("hidden");
+      } else if (el == day) {
+        elSpan.classList.add("sidebarCalendarHighlightedDay");
       }
+      console.log(day)
     }
   }
+
 }

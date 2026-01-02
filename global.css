@@ -18,6 +18,11 @@
   font-family: "Inter", "Noto Sans JP";
 }
 
+a {
+  text-decoration: none;
+  color: var(--text-color) !important;
+} 
+
 .hidden {
   opacity: 0;
 }
