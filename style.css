@@ -1,59 +1,74 @@
 :root {
-    /* --red: #C3423F;
+  /* --red: #C3423F;
     --green: #9BC53D;
     --blue: #5BC0EB;
     --yellow: #FDE74C; */
-    --background-color: #000;
-    --text-color: #EDEDED;
+  --background-color: #000;
+  --text-color: #ededed;
 
-    color: var(--text-color) !important;
-    font-family: "JetBrains Mono" !important;
-    font-weight: 400;
+  color: var(--text-color) !important;
+  font-family: "JetBrains Mono" !important;
+  font-weight: 400;
 }
 
 body {
-    background-color: var(--background-color);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 
 #wrapper {
-    width: 50%;
-    overflow: hidden;
+  width: 50%;
+  overflow: hidden;
 }
 
-#carousel {
-    overflow: hidden;
-    height: 200px;
-    transform: translate(-10%);
+#background {
+  display: flex;
+  flex-direction: row;
+}
+
+#background > * {
+  animation: scroll 100s linear infinite;
+}
+
+.carousel {
+  height: 200px;
+  display: block;
 }
 
 #title {
-    font-size: 32px;
-    margin-left: auto;
-    margin-right: auto;
+  font-size: 32px;
 }
 
 #clickys {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 #clickys > a {
-    text-decoration: none;
-    color: var(--text-color);
-
+  text-decoration: none;
+  color: var(--text-color);
 }
 
-
 h1 {
-    margin: 0;
-    text-align: center;
+  margin: 0;
+  text-align: center;
 }
 
 @font-face {
-    font-family: "JetBrains Mono";
-    src: url("JetBrainsMono.woff2") format("woff2");
+  font-family: "JetBrains Mono";
+  src: url("assets/fonts/JetBrainsMono.woff2") format("woff2");
+}
+
+@keyframes scroll {
+  0% {
+    transform: translate(0%);
+  }
+  100% {
+    transform: translate(-100%);
+  }
 }
