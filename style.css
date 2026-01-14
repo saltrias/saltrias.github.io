@@ -22,6 +22,9 @@ body {
 
 #wrapper {
   width: 50%;
+  /* If your screen is less that 350px,
+     It's probably time you get a new phone. */
+  min-width: 350px;
   overflow: hidden;
 }
 
@@ -30,13 +33,13 @@ body {
   flex-direction: row;
 }
 
-#background > * {
-  animation: scroll 100s linear infinite;
-}
-
-.carousel {
-  height: 200px;
-  display: block;
+#background {
+    background-image: url("assets/images/background.png");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    width: 10500px;
+    height: 200px;
+    animation: scroll 100s linear infinite;
 }
 
 #title {
@@ -69,6 +72,6 @@ h1 {
     transform: translate(0%);
   }
   100% {
-    transform: translate(-100%);
+    transform: translate(-3500px);
   }
 }
