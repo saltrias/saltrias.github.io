@@ -1,36 +1,36 @@
 :root {
-  /* --red: #C3423F;
-    --green: #9BC53D;
-    --blue: #5BC0EB;
-    --yellow: #FDE74C; */
-  --background-color: #000;
-  --text-color: #ededed;
+    --red: #c3423f;
+    --green: #9bc53d;
+    --blue: #5bc0eb;
+    --yellow: #fde74c;
+    --background-color: #000;
+    --text-color: #ededed;
 
-  color: var(--text-color) !important;
-  font-family: "JetBrains Mono" !important;
-  font-weight: 400;
+    color: var(--text-color) !important;
+    font-family: "JetBrains Mono" !important;
+    font-weight: 400;
 }
 
 body {
-  background-color: var(--background-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
 }
 
 #wrapper {
-  width: 50%;
-  /* If your screen is less that 350px,
+    width: 50%;
+    /* If your screen is less that 350px,
      It's probably time you get a new phone. */
-  min-width: 350px;
-  overflow: hidden;
+    min-width: 350px;
+    overflow: hidden;
 }
 
 #background {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 #background {
@@ -43,35 +43,58 @@ body {
 }
 
 #title {
-  font-size: 32px;
+    font-size: 32px;
 }
 
-#clickys {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+#navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-#clickys > a {
-  text-decoration: none;
-  color: var(--text-color);
+#navigation > span {
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#navigation > span:nth-child(1) {
+    color: var(--red) !important;
+}
+
+#navigation > span:nth-child(2) {
+    color: var(--green) !important;
+}
+
+#navigation > span:nth-child(3) {
+    color: var(--blue) !important;
+}
+
+#navigation > span:nth-child(4) {
+    color: var(--yellow) !important;
+}
+
+#feed {
+    margin-top: 20px;
+    text-align: center;
 }
 
 h1 {
-  margin: 0;
-  text-align: center;
+    margin: 0;
+    text-align: center;
 }
 
 @font-face {
-  font-family: "JetBrains Mono";
-  src: url("assets/fonts/JetBrainsMono.woff2") format("woff2");
+    font-family: "JetBrains Mono";
+    src: url("assets/fonts/JetBrainsMono.woff2") format("woff2");
 }
 
 @keyframes scroll {
-  0% {
-    transform: translate(0%);
-  }
-  100% {
-    transform: translate(-3500px);
-  }
+    0% {
+        transform: translate(0%);
+    }
+    100% {
+        transform: translate(-3500px);
+    }
 }
