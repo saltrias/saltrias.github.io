@@ -1,0 +1,40 @@
+body {
+    background-color: #1E1E2E;
+    margin: 0;
+}
+
+#clock {
+    position: fixed;
+    background-color: #181825;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+    border: 2px solid black;
+}
+
+#clock > span {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 200;
+    margin: 0;
+}
+
+#clockSign {
+    color: #CDD6F4;
+}
+
+#daySpan {
+    color: #F38BA8;
+}
+
+#hourSpan {
+    color: #FAB387;
+}
+
+#minuteSpan {
+    color: #A6E3A1;
+}
+
+#secondSpan {
+    color: #89B4FA;
+}

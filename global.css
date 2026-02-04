@@ -1,0 +1,20 @@
+:root {
+    --home-links-red: #c3423f;
+    --home-links-green: #9bc53d;
+    --home-links-blue: #5bc0eb;
+    --home-links-yellow: #fde74c;
+    --background-color : #000;
+    --text-color: #ededed;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "JetBrains Mono";
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("assets/JetBrainsMono.woff2") format("woff2");
+}

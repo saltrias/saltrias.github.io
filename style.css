@@ -1,18 +1,4 @@
-:root {
-    --red: #c3423f;
-    --green: #9bc53d;
-    --blue: #5bc0eb;
-    --yellow: #fde74c;
-    --background-color: #000;
-    --text-color: #ededed;
-
-    color: var(--text-color) !important;
-    font-family: "JetBrains Mono" !important;
-    font-weight: 400;
-}
-
 body {
-    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,20 +7,20 @@ body {
 }
 
 #wrapper {
-    width: 50%;
-    /* If your screen is less that 350px,
+    width: 60%;
+    /* If your screen is less than 400px,
      It's probably time you get a new phone. */
-    min-width: 350px;
+    min-width: 400px;
     overflow: hidden;
 }
 
 #background {
-    background-image: url("assets/images/background.png");
+    background-image: url("assets/background.png");
     background-repeat: repeat-x;
     background-size: auto 100%;
     width: 10500px;
     height: 200px;
-    animation: scroll 100s linear infinite;
+    animation: scroll 150s linear infinite;
 }
 
 #title {
@@ -47,27 +33,27 @@ body {
     justify-content: space-evenly;
 }
 
-#navigation > span {
+#navigation > a {
     font-size: 20px;
     text-decoration: none;
     color: var(--text-color);
     cursor: pointer;
 }
 
-#navigation > span:nth-child(1) {
-    color: var(--red) !important;    
+#postsLink {
+    color: var(--home-links-red) !important;    
 }
 
-#navigation > span:nth-child(2) {
-    color: var(--green) !important;
+#projectsLink {
+    color: var(--home-links-green) !important;
 }
 
-#navigation > span:nth-child(3) {
-    color: var(--blue) !important;
+#aboutLink {
+    color: var(--home-links-blue) !important;
 }
 
-#navigation > span:nth-child(4) {
-    color: var(--yellow) !important;
+#extraLink {
+    color: var(--home-links-yellow) !important;
 }
 
 #feed {
@@ -78,11 +64,6 @@ body {
 h1 {
     margin: 0;
     text-align: center;
-}
-
-@font-face {
-    font-family: "JetBrains Mono";
-    src: url("assets/fonts/JetBrainsMono.woff2") format("woff2");
 }
 
 @keyframes scroll {
