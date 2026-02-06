@@ -1,20 +1,84 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
+    display: flex;
     background-color: #1E1E2E;
     margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    min-width: 0;
+    height: 100%;
+    background-color: #11111B;
+    justify-content: center;
+}
+
+#sidebarTextDiv {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+
+#sidebarText {
+    font-size: 20px;
+}
+
+#sidebarTextScrollArea {
+    flex: 1;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#sidebarTextScrollArea > span {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#postArea {
+    /* padding-top: 20px; */
+    padding-left: 20px;
+    flex: 1;
+}
+
+#topbar {
+    display: flex;
+    background-color: #181825; 
+    min-height: 50px;
+    height: 10%;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+#topbar > * {
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 #clock {
-    position: fixed;
-    background-color: #181825;
-    bottom: 0;
-    right: 0;
+    margin-left: 20px;
     font-size: 0;
-    border: 2px solid black;
 }
 
 #clock > span {
     display: inline-block;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 200;
     margin: 0;
 }

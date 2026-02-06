@@ -1,6 +1,7 @@
 # Intro
 
-What is this? why is there a timer at the top? omg!! ahhhhhhh im going to freak out
+What is this? why is there a timer at the top? omg!! ahhhhhhh im going to freak out.
+
 Chillax. ***That*** is the timer where if it hits 0, idk really idk what happens
 
 ## why?
@@ -12,6 +13,7 @@ So what if i literally Write (in this blog) or Die (like, something to do with t
 ## how does it work?
 
 Each character that i write in each post earn me 5 minutes. 
+
 Each second the clock ticks down to 0. (Note: it dosen't actually hit 0 [plot twist later when it hits 0])
 
 I don't know how to end this first post. The clock keeps ticking. I'll have to write something eventually.
