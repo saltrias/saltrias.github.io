@@ -23,7 +23,8 @@ const postArea = document.getElementById("postArea")
 
 function updateTimer() {
     let currentDate = new Date();
-    let diff = startDate - currentDate + (charsWritten * TIME_PER_CHARACTER);
+    let diff = 14 * DAY;
+    diff += startDate - currentDate + (charsWritten * TIME_PER_CHARACTER);
 
     const sign = diff >= 0 ? "+" : "-"
 
@@ -65,4 +66,5 @@ function initializeBlogPosts(blogs){
 
 updateTimer();
 initializeBlogPosts(postsEntries);
+loadPost("Intro")
 setInterval(updateTimer, 1000);

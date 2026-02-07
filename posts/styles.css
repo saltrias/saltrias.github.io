@@ -37,9 +37,11 @@ body {
     flex: 1;
     padding-right: 20px;
     padding-left: 20px;
+    overflow-y: scroll;
 }
 
 #sidebarTextScrollArea > span {
+    display: block;
     cursor: pointer;
     font-size: 16px;
 }
@@ -54,6 +56,11 @@ body {
     /* padding-top: 20px; */
     padding-left: 20px;
     flex: 1;
+    overflow-y: scroll;
+}
+
+#postArea > p {
+    margin: 0.75em 0;
 }
 
 #topbar {
@@ -64,6 +71,7 @@ body {
     width: 100%;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
 #topbar > * {
@@ -78,7 +86,7 @@ body {
 
 #clock > span {
     display: inline-block;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 200;
     margin: 0;
 }

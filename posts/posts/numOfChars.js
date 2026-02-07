@@ -1,1 +1,1 @@
-export const charsWritten = 745;
+export const charsWritten = 992;

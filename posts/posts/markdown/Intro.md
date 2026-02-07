@@ -1,6 +1,6 @@
 # Intro
 
-What is this? why is there a timer at the top? omg!! ahhhhhhh im going to freak out.
+What is this? why is there a timer at the top? omg!! ahhhhhhh im going to freak out
 
 Chillax. ***That*** is the timer where if it hits 0, idk really idk what happens
 
