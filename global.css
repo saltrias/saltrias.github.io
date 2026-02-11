@@ -1,20 +1,22 @@
 :root {
-    --home-links-red: #c3423f;
-    --home-links-green: #9bc53d;
-    --home-links-blue: #5bc0eb;
-    --home-links-yellow: #fde74c;
-    --background-color : #000;
-    --text-color: #ededed;
+    --bg: #282828;
+    --fg: #EBDBB2;
+    --gray: #928374;
+    --red: #CC2416;
+    --green: #98971A;
+    --yellow: #D79921;
+    --purple: #B16286;
+    --aqua: #689D6A;
+    --orange: #D65D0E;
 }
 
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: "JetBrains Mono";
-    font-weight: 400;
+* {
+    font-family: "JetBrainsMono";
+    color: var(--fg);
 }
 
 @font-face {
-    font-family: "JetBrains Mono";
-    src: url("assets/JetBrainsMono.woff2") format("woff2");
+    font-family: "JetBrainsMono";
+    src: url("assets/JetBrainsMono.ttf")
 }
+

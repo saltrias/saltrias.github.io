@@ -1,76 +1,23 @@
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
+    background-color: var(--bg);
 }
 
-#wrapper {
-    width: 60%;
-    /* If your screen is less than 400px,
-     It's probably time you get a new phone. */
-    min-width: 400px;
-    overflow: hidden;
+#text > * {
+    display: inline-block;
 }
 
-#background {
-    background-image: url("assets/background.png");
-    background-repeat: repeat-x;
-    background-size: auto 100%;
-    width: 10500px;
-    height: 200px;
-    animation: scroll 150s linear infinite;
+#text span:nth-child(1) {
+    color: var(--red);
 }
-
-#title {
-    font-size: 32px;
+#text span:nth-child(2) {
+    color: var(--orange);
 }
-
-#navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+#text span:nth-child(3) {
+    color: var(--green);
 }
-
-#navigation > a {
-    font-size: 20px;
-    text-decoration: none;
-    color: var(--text-color);
-    cursor: pointer;
+#text span:nth-child(4) {
+    color: var(--aqua);
 }
-
-#postsLink {
-    color: var(--home-links-red) !important;    
-}
-
-#projectsLink {
-    color: var(--home-links-green) !important;
-}
-
-#aboutLink {
-    color: var(--home-links-blue) !important;
-}
-
-#extraLink {
-    color: var(--home-links-yellow) !important;
-}
-
-#feed {
-    margin-top: 20px;
-    text-align: center;
-}
-
-h1 {
-    margin: 0;
-    text-align: center;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translate(0%);
-    }
-    100% {
-        transform: translate(-3500px);
-    }
+#text span:nth-child(5) {
+    color: var(--purple);
 }
