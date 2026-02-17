@@ -10,13 +10,7 @@
     --orange: #D65D0E;
 }
 
-* {
-    font-family: "JetBrainsMono";
-    color: var(--fg);
+body {
+    height: 100px;
+    background-color: var(--bg);
 }
-
-@font-face {
-    font-family: "JetBrainsMono";
-    src: url("assets/JetBrainsMono.ttf")
-}
-
