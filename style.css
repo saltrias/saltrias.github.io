@@ -1,23 +1,57 @@
+html {
+    width: 100%;
+    height: 100%;
+    overflow: none;
+}
+
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--bg);
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
-#text > * {
-    display: inline-block;
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 75%;
+    align-items: center;
+    justify-content: center;
 }
 
-#text span:nth-child(1) {
+#topText {
+    font-size: 3vw;
+    margin: 0;
+}
+
+#clockDiv {
+    display: flex;
+}
+
+#clockDiv > span {
+    font-size: 7.5vw;    
+}
+
+#weekSpan {
     color: var(--red);
 }
-#text span:nth-child(2) {
-    color: var(--orange);
-}
-#text span:nth-child(3) {
+
+#daySpan {
     color: var(--green);
 }
-#text span:nth-child(4) {
-    color: var(--aqua);
+
+#hourSpan {
+    color: var(--blue);
 }
-#text span:nth-child(5) {
+
+#minuteSpan {
+    color: var(--yellow);
+}
+
+#secondSpan {
     color: var(--purple);
 }
