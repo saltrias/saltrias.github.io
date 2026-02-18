@@ -1,0 +1,43 @@
+:root {
+    --bg: #282828;
+    --fg: #EBDBB2;
+    --gray: #928374;
+    --red: #CC2416;
+    --green: #98971A;
+    --yellow: #D79921;
+    --purple: #B16286;
+    --blue: #689D6A;
+    --orange: #D65D0E;
+}
+
+* {
+    font-family: "JetBrainsMono"
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden; 
+    background-color: var(--bg);
+}
+
+#scrollbar {
+    flex: 2;
+}
+#main {
+    flex: 9;
+}
+
+h1 {
+    color: var(--fg);
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("./JetBrainsMono.ttf") format("truetype");
+}

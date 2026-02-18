@@ -3,144 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="global.css">
-        <style>
-            :root {
-                --bg: #282828;
-                --fg: #EBDBB2;
-                --gray: #928374;
-                --red: #CC2416;
-                --green: #98971A;
-                --yellow: #D79921;
-                --purple: #B16286;
-                --blue: #689D6A;
-                --orange: #D65D0E;
-            }
-
-            * {
-                font-family: "JetBrainsMono";
-                color: var(--fg);
-            }
-
-            @font-face {
-                font-family: "JetBrainsMono";
-                src: url("JetBrainsMono.ttf")
-            }
-        </style>
-
-        <style>
-            html {
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-            }
-
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: var(--bg);
-                width: 100%;
-                height: 100%;
-                margin: 0;
-            }
-
-            #container {
-                display: flex;
-                flex-direction: column;
-                width: 75%;
-                height: 75%;
-                align-items: center;
-                justify-content: center;
-            }
-
-            #topText {
-                font-size: 3vw;
-                margin: 0;
-            }
-
-            #clockDiv {
-                display: flex;
-            }
-
-            #clockDiv > span {
-                font-size: 7.5vw;    
-            }
-
-            #weekSpan {
-                color: var(--red);
-            }
-
-            #daySpan {
-                color: var(--green);
-            }
-
-            #hourSpan {
-                color: var(--blue);
-            }
-
-            #minuteSpan {
-                color: var(--yellow);
-            }
-
-            #secondSpan {
-                color: var(--purple);
-            }
-        </style>
+        <title>site in progress</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
     </head>
     <body>
-        <div id="container">
-            <p id="topText">time since 7th iteration</p>
-            <div id="clockDiv">
-                <span id="weekSpan">0w</span>
-                <span id="daySpan">0d</span>
-                <span id="hourSpan">5h</span>
-                <span id="minuteSpan">12m</span>
-                <span id="secondSpan">1s</span>
-            </div>
-            <a href="beta/">beta page</a>
+        <div id="scrollbar">
+
         </div>
-        <script>
-            const weekSpan = document.getElementById("weekSpan");
-            const daySpan = document.getElementById("daySpan");
-            const hourSpan = document.getElementById("hourSpan");
-            const minuteSpan = document.getElementById("minuteSpan");
-            const secondSpan = document.getElementById("secondSpan");
-
-            const SECOND = 1000;
-            const MINUTE = 60 * SECOND;
-            const HOUR = 60 * MINUTE;
-            const DAY = 24 * HOUR;
-            const WEEK = 7 * DAY;
-
-            const startTime = new Date(Date.UTC(2026, 1, 17, 9, 0, 0));
-
-            function updateClock() {
-                let currentTime = new Date();
-
-                let diff = currentTime - startTime;
-
-                let fl = Math.floor
-                let ab = Math.abs
-
-                const diffWeeks = ab( fl( diff / WEEK ) ).toString() + "w";
-                const diffDays = ab( fl( ( diff % WEEK ) / DAY) ).toString() + "d";
-                const diffHours = ab( fl( (diff % DAY ) / HOUR) ).toString() + "h";
-                const diffMinutes = ab( fl( ( diff % HOUR ) / MINUTE) ).toString() + "m";
-                const diffSeconds = ab( fl( ( diff % MINUTE ) / SECOND) ).toString() + "s";
-
-                weekSpan.innerText = diffWeeks
-                daySpan.innerText = diffDays
-                hourSpan.innerText = diffHours
-                minuteSpan.innerText = diffMinutes
-                secondSpan.innerText = diffSeconds
-            }
-
-
-            updateClock();
-
-            setInterval(updateClock, 1000);
-        </script>
+        <div id="main">
+            <h1>saltrias</h1>
+        </div>
     </body>
 </html>
