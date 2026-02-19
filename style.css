@@ -40,27 +40,6 @@ body {
     padding-top: 1.5vw;
 }
 
-#packet {
-    flex: 5;
-    display: flex;
-    /* Use box-shadow so it dosen't add width */
-    box-shadow: -0.2vw 0 var(--blue);
-    justify-content: center;
-    overflow: hidden;
-}
-
-#packet-text {
-    margin-top: 0;
-    font-size: 2.5vw;
-    /* normal line height is 1.2  *
-     * so we multiply it with 1.2 */
-    line-height: calc(2.5vw*1.2);
-    animation-name: scroll;
-    animation-duration: 100s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
 #topbar {
     display: flex;
 }
@@ -80,13 +59,4 @@ span#title {
 @font-face {
     font-family: "JetBrainsMono";
     src: url("assets/JetBrainsMono.ttf") format("truetype");
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateY(calc(2.5vw*1.2*257*-1));
-    }
-    100% {
-        transform: translateY(calc(.5vw));
-    }
 }
