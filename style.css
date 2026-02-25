@@ -1,11 +1,12 @@
 :root {
     --base: #1E1E2E;
     --text: #CDD6F4;
+    --purple: #CBA6F7;
     --red: #F38BA8;
-    --peach: #FAB387;
+    --orange: #FAB387;
+    --yellow: #F9E2AF;
     --green: #A6E3A1;
-    --mauve: #CBA6F7;
-    --green: #89B4FA;
+    --blue: #89B4FA;
 }
 
 * {
@@ -19,6 +20,10 @@ body {
     margin: 0;
     background-color: var(--base);
     justify-content: center;
+    /* define line height  * 
+     * so browser dont get *
+     * angry               */
+    line-height: 1.5;
 }
 
 #wrapper {
@@ -28,21 +33,46 @@ body {
     margin-top: 7vh;
 }
 
-#topTextDiv {
+header {
     display: flex;
     justify-content: center;
     margin-bottom: 2vh;
 }
 
 #topText {
-    font-size: 10vw;
-    color: var(--mauve);
+    font-size: clamp(3rem, 6vw, 5rem);
+    color: var(--purple);
 }
 
 #links {
     display: flex;
     justify-content: center;
     gap: 3vw;
+    flex-wrap: wrap;
+}
+
+#links > a {
+    font-size: clamp(1rem, 3vw, 2.5rem);
+    text-decoration: none;
+}
+
+#links > a:nth-child(1) {
+    color: var(--red);
+}
+
+
+#links > a:nth-child(2) {
+    color: var(--yellow);
+}
+
+
+#links > a:nth-child(3) {
+    color: var(--green);
+}
+
+
+#links > a:nth-child(4) {
+    color: var(--blue)
 }
 
 @font-face {
