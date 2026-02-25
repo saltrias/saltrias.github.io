@@ -1,27 +1,48 @@
 :root {
-    --bg: #282828;
-    --fg: #ebdbb2;
-    --red: #cc241d;
-    --green: #98971a;
-    --yellow: #d79921;
-    --blue: #458588;
-    --purple: #b16286;
-    --cyan: #689d6a;
+    --base: #1E1E2E;
+    --text: #CDD6F4;
+    --red: #F38BA8;
+    --peach: #FAB387;
+    --green: #A6E3A1;
+    --mauve: #CBA6F7;
+    --green: #89B4FA;
 }
 
 * {
     font-family: "JetBrainsMono";
-    color: var(--fg);
+    color: var(--text);
 }
 
 body {
+    display: flex;
     width: 100%;
     margin: 0;
-    background-color: var(--bg);
+    background-color: var(--base);
+    justify-content: center;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 7vh;
+}
+
+#topTextDiv {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vh;
 }
 
 #topText {
-    font-size: 15vw;
+    font-size: 10vw;
+    color: var(--mauve);
+}
+
+#links {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
 }
 
 @font-face {
