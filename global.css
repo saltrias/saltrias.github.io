@@ -1,0 +1,25 @@
+:root {
+    --base: #1E1E2E;
+    --text: #CDD6F4;
+    --purple: #CBA6F7;
+    --red: #F38BA8;
+    --orange: #FAB387;
+    --yellow: #F9E2AF;
+    --green: #A6E3A1;
+    --blue: #89B4FA;
+}
+
+* {
+    font-family: "JetBrainsMono";
+    color: var(--text);
+    font-variant-ligatures: none;
+}
+
+body {
+    background-color: var(--base);
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("./assets/JetBrainsMono.ttf");
+}

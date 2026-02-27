@@ -1,0 +1,24 @@
+header {
+    /* I'm too lazy to clamp it. */
+    margin-bottom: 2vw;
+}
+
+header > span {
+    color: var(--green);
+    font-size: clamp(2rem, 3vw, 7rem);
+}
+
+#description {
+    font-size: clamp(1rem, 1.5vw, 5rem);
+}
+
+#gallery {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    gap: 3vw;
+}
+
+#gallery > img {
+    width: 20vw;
+}

@@ -40,7 +40,7 @@ header {
 }
 
 #topText {
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(2.3rem, 6vw, 4rem);
     color: var(--purple);
 }
 
@@ -52,7 +52,7 @@ header {
 }
 
 #links > a {
-    font-size: clamp(1rem, 3vw, 2.5rem);
+    font-size: clamp(1rem, 2.2vw, 2.5rem);
     text-decoration: none;
 }
 
@@ -75,7 +75,3 @@ header {
     color: var(--blue)
 }
 
-@font-face {
-    font-family: "JetBrainsMono";
-    src: url("./assets/JetBrainsMono.ttf");
-}
