@@ -1,20 +1,12 @@
 header {
-    margin: 2vw 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-header > #goBack {
-    color: #a6adc8;
-    font-size: clamp(0.7rem, 2vw, 5rem);
+    margin-bottom: 2vw;
 }
 
 header > #title {
     color: var(--yellow);
-    font-size: clamp(1.5rem, 4vw, 7rem);
+    font-size: clamp(1.5rem, 3vw, 7rem);
 }
 
 #projects > a {
-    font-size: clamp(1rem, 1vw, 7rem);
+    font-size: clamp(1.25rem, 2vw, 7rem);
 }

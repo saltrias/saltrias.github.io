@@ -1,0 +1,11 @@
+#postList {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 1.25vw, 4rem) 0;
+}
+
+#postList > a {
+    font-size: clamp(1rem, 1vw, 2.5rem);
+    text-decoration: none;
+}
+

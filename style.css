@@ -25,14 +25,17 @@ body {
      * angry               */
     line-height: 1.5;
     color: var(--text);
+    overflow-x: hidden;
+    padding: 0;
 }
 
 #topDiv {
     display: flex;
     flex-direction: column;
-    width: min(900px, 90%);
-    margin: 5rem auto 0 auto;
+    width: 90%;
+    margin: 5rem auto 2rem auto;
     align-items: center;
+    border-bottom: solid 2px var(--green);
 }
 
 header {
@@ -78,20 +81,29 @@ header {
 }
 
 #logs {
-    width: 65%;
-    margin: 0 auto 0 auto;
+    width: min(75%, 900px);
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-}
-
-#logs {
     font-size: 1.25vw;
 }
 
+/*
 #logs > p {
     margin: 0.75rem 0;
 }
 
 #logText {
     font-size: 2vw;
+}
+*/
+
+#logs > p {
+    margin: clamp(0.75rem, 1vw, 1rem) 0;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+
+#logText {
+    font-size: clamp(1.25rem, 3vw, 2.5rem);
 }

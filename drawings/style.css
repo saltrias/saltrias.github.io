@@ -1,3 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1vw;
+}
+
 header {
     /* I'm too lazy to clamp it. */
     margin-bottom: 2vw;
@@ -14,11 +22,12 @@ header > span {
 
 #gallery {
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: wrap;
-    gap: 3vw;
+    gap: 5vw;
 }
 
 #gallery > img {
     width: 20vw;
 }
+
+
