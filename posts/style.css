@@ -1,7 +1,7 @@
 #postList {
     display: flex;
     flex-direction: column;
-    gap: clamp(1.25rem, 1.25vw, 4rem) 0;
+    gap: 1rem;
 }
 
 #postList > a {
