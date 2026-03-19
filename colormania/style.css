@@ -1,0 +1,85 @@
+* {
+    font-family: "JetBrainsMono";
+    color: #ffffff;
+    user-select: none;
+}
+
+body {
+    background-color: #1E1E2E;
+}
+
+h1 {
+    margin: 3vw 0;
+    font-size: 4vw;
+}
+
+p {
+    margin: 0.5vw;
+    font-size: 2vw;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 2vw;
+}
+
+.color-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: clamp(70px, 20vw, 450px);
+    aspect-ratio: 5 / 7;
+    gap: 0.5vw;
+}
+
+.color-image {
+    width: 90%;
+    aspect-ratio: 1 / 1;
+    background-color: navy;
+    cursor: pointer;
+}
+
+.color-name {
+    font-size: clamp(0.55rem, 2vw, 3rem);
+}
+
+.components {
+    display: flex;
+    flex: 1;
+    width: 90%;
+    justify-content: center;
+    gap: 5%;
+}
+
+
+.component > span {
+    font-size: clamp(0.75rem, 2vw, 3rem);
+}
+
+.component {
+    /* Do not ask me how this works. *
+     * It just does.                 */
+    height: 60%;
+    aspect-ratio: 1 / 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.black-text {
+    color: #000000;
+}
+
+.white-text {
+    color: #ffffff;
+}
+
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("../assets/JetBrainsMono.ttf");
+}
