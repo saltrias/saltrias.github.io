@@ -1,97 +1,56 @@
 * {
-    font-family: "JetBrainsMono";
+    font-family: "Iosevka";         
+    color: white;
 }
 
 body {
     display: flex;
-    flex-direction: column;
-    width: 100%;
     margin: 0;
-    justify-content: center;
-    /* define line height  * 
-     * so browser dont get *
-     * angry               */
-    line-height: 1.5;
-    color: var(--text);
-    overflow-x: hidden;
-    padding: 0;
+    padding: 3vw;
+    background-color: #0A0A1B;
 }
 
-#topDiv {
+#topbar {
     display: flex;
-    flex-direction: column;
     width: 90%;
-    margin: 5rem auto 2rem auto;
-    align-items: center;
-    border-bottom: solid 2px var(--green);
-}
-
-header {
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-#topText {
-    font-size: clamp(2.3rem, 6vw, 4rem);
-    color: var(--purple);
-}
-
-#links {
-    display: flex;
-    justify-content: center;
-    gap: 3vw;
-    flex-wrap: wrap;
-    margin-bottom: 2vw;
-}
-
-#links > a {
-    font-size: clamp(1rem, 2.2vw, 2.5rem);
-    text-decoration: none;
-}
-
-#links > a:nth-child(1) {
-    color: var(--red);
-}
-
-
-#links > a:nth-child(2) {
-    color: var(--yellow);
-}
-
-
-#links > a:nth-child(3) {
-    color: var(--green);
-}
-
-
-#links > a:nth-child(4) {
-    color: var(--blue)
-}
-
-#logs {
-    width: min(75%, 900px);
+    height: 6vw;
     margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#topbar > div {
     display: flex;
-    flex-direction: column;
-    font-size: 1.25vw;
+    align-items: center;
+    gap: 1.5vw;
 }
 
-/*
-#logs > p {
-    margin: 0.75rem 0;
+#right > a {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2.5vw;
 }
 
-#logText {
-    font-size: 2vw;
-}
-*/
-
-#logs > p {
-    margin: clamp(0.75rem, 1vw, 1rem) 0;
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
+#title {
+    font-size: 4vw;
 }
 
+#avatar {
+    width: 4vw;
+    border-radius: 4vw;
+}
 
-#logText {
-    font-size: clamp(1.25rem, 3vw, 2.5rem);
+@font-face {
+    font-family: "Iosevka";
+    src: url("assets/IosevkaCharonMono-Regular.ttf");
+}
+
+@media (max-width: 500px) {
+   #right > a {
+        font-size: 4vw;
+   } 
+
+   #title {
+        font-size: 6w;
+   }
 }
