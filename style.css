@@ -19,6 +19,11 @@ h2 {
     font-size: 1.5rem;
 }
 
+button {
+    color: white;
+    background-color: black;
+}
+
 #wrapper {
     width: 90%;
 }
@@ -41,6 +46,12 @@ h2 {
     cursor: pointer;
     text-decoration: none;
     font-size: 2vw;
+
+}
+
+#right {
+    display: flex;
+    flex-direction: row;
 }
 
 #title {
@@ -51,17 +62,53 @@ h2 {
     width: 90%;
 }
 
+#chunk1 {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    align-items: center;
+}
+
+#paintingDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.textChunk {
+    flex: 1;
+}
+
 @font-face {
     font-family: "Iosevka";
     src: url("assets/IosevkaCharonMono-Regular.ttf");
 }
 
 @media (max-width: 500px) {
-   #right > a {
-        font-size: 4vw;
-   } 
+    #topbar {
+        height: 16vw;
+    }
 
-   #title {
+    #right {
+        flex-direction: column;
+    }
+
+    #right > a {
+        font-size: 4vw;
+    } 
+
+    #title {
         font-size: 6vw;
-   }
+    }
+
+    #chunk1 {
+        flex-direction: column;
+    }
+}
+
+#randomDrawing {
+    width: 250px;
+}
+
+#randomizeDrawing {
+    width: 250px
 }
