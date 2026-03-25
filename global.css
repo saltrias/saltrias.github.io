@@ -1,0 +1,14 @@
+* {
+    font-family: "Iosevka";         
+    color: white;
+}
+
+body {
+    background-color: #0A0A1B;
+}
+
+@font-face {
+    font-family: "Iosevka";
+    src: url("assets/IosevkaCharonMono-Regular.ttf");
+}
+

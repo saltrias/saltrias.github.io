@@ -5,16 +5,28 @@
 
 body {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
     padding: 3vw;
-    background-color: #0A0A1B;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+#wrapper {
+    width: 90%;
 }
 
 #topbar {
     display: flex;
     width: 90%;
-    height: 6vw;
-    margin: 0 auto;
+    height: 7vw;
     align-items: center;
     justify-content: space-between;
 }
@@ -28,16 +40,15 @@ body {
 #right > a {
     cursor: pointer;
     text-decoration: none;
-    font-size: 2.5vw;
+    font-size: 2vw;
 }
 
 #title {
-    font-size: 4vw;
+    font-size: 3.5vw;
 }
 
-#avatar {
-    width: 4vw;
-    border-radius: 4vw;
+#main {
+    width: 90%;
 }
 
 @font-face {
@@ -51,6 +62,6 @@ body {
    } 
 
    #title {
-        font-size: 6w;
+        font-size: 6vw;
    }
 }
