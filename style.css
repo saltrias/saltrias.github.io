@@ -24,6 +24,12 @@ button {
     background-color: black;
 }
 
+hr {
+    margin: 3vw 0;
+    color: rgb(30, 30, 40);
+    margin-bottom: 0;
+}
+
 #wrapper {
     width: 90%;
 }
@@ -111,4 +117,11 @@ button {
 
 #randomizeDrawing {
     width: 250px
+}
+
+#footerText {
+    margin-top: 1vw;
+    text-align: center;
+    font-size: 1rem;
+    color: hsl(200, 10%, 75%);
 }

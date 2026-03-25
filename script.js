@@ -12,4 +12,4 @@ randomButtonEl.addEventListener("click", () => {
     changeImage(Math.floor(Math.random() * DRAWINGS) + 1)
 })
 
-changeImage(12);
+changeImage(20);
