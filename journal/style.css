@@ -1,0 +1,15 @@
+body {
+    padding: 2vw;
+}
+
+table {
+    max-width: 400px;
+    width: 100%;
+    font-size: 2.5vw;
+    gap: 2vw;
+}
+
+td {
+    font-size: 1.5rem;
+}
+

@@ -84,11 +84,6 @@ hr {
     flex: 1;
 }
 
-@font-face {
-    font-family: "Iosevka";
-    src: url("assets/IosevkaCharonMono-Regular.ttf");
-}
-
 @media (max-width: 500px) {
     #topbar {
         height: 16vw;
