@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#wrapper {
+    width: 80%;
+}
+
+#title {
+    font-size: 2.3rem;
+    margin: 1.5vw 0 1.5vw 0;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+img {
+    /* width: 80vw; */
+    width: clamp(200px, 80vw, 800px);
+    display: block;
+    margin: 0 auto;
+}
+
+.bottomText {
+    /* This is used to compliment the image by using text below. */
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+@media (max-width: 500px) {
+    #wrapper {
+        width: 100%;
+    }
+}
+
+li {
+    margin: 0.3rem 0;
+}

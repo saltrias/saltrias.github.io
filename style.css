@@ -62,6 +62,7 @@ hr {
 
 #title {
     font-size: 3.5vw;
+    cursor: default;
 }
 
 #main {
