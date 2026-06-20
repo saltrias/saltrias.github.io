@@ -85,7 +85,35 @@ hr {
     flex: 1;
 }
 
-@media (max-width: 500px) {
+
+#randomDrawing {
+    width: 250px;
+}
+
+#artworkHeader {
+    font-size: 2rem;
+}
+
+#artworks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#artworks > img {
+    width: 250px;
+    margin: 10px 10px;
+}
+
+#footerText {
+    margin-top: 1vw;
+    text-align: center;
+    font-size: 1rem;
+    color: hsl(200, 10%, 75%);
+}
+
+
+@media (max-width: 600px) {
     #topbar {
         height: 16vw;
     }
@@ -105,19 +133,20 @@ hr {
     #chunk1 {
         flex-direction: column;
     }
-}
 
-#randomDrawing {
-    width: 250px;
-}
 
-#randomizeDrawing {
-    width: 250px
-}
+    #artworkHeader {
+        font-size: 2rem;
+    }
 
-#footerText {
-    margin-top: 1vw;
-    text-align: center;
-    font-size: 1rem;
-    color: hsl(200, 10%, 75%);
+    #artworks {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    #artworks > img {
+        width: 150px;
+        margin: 10px 10px;
+    }
 }
