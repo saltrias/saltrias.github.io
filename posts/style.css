@@ -1,0 +1,10 @@
+h1 {
+    font-size: clamp(24px, 10vw, 48px);
+}
+
+td, tr {
+    font-size: clamp(12px, 5vw, 24px);
+    padding: 0 2vw;
+    text-align: center;
+}
+

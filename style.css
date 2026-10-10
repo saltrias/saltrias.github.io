@@ -1,152 +1,21 @@
-* {
-    font-family: "Iosevka";         
-    color: white;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 3vw;
-}
-
-p {
-    font-size: 1.2rem;
-}
-
-h2 {
-    font-size: 1.5rem;
-}
-
-button {
-    color: white;
-    background-color: black;
-}
-
-hr {
-    margin: 3vw 0;
-    color: rgb(30, 30, 40);
-    margin-bottom: 0;
-}
-
-#wrapper {
-    width: 90%;
-}
-
-#topbar {
-    display: flex;
-    width: 90%;
-    height: 7vw;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#topbar > div {
-    display: flex;
-    align-items: center;
-    gap: 1.5vw;
-}
-
-#right > a {
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2vw;
-
-}
-
-#right {
-    display: flex;
-    flex-direction: row;
-}
-
 #title {
-    font-size: 3.5vw;
-    cursor: default;
+    font-size: clamp(24px, 10vw, 48px);
 }
 
-#main {
-    width: 90%;
-}
-
-#chunk1 {
+#links {
     display: flex;
     flex-direction: row;
     gap: 2vw;
-    align-items: center;
+    margin: 2vw 0;
+}
+    
+#links > a {
+    font-size: clamp(16px, 5vw, 24px);
 }
 
-#paintingDiv {
-    display: flex;
-    flex-direction: column;
-}
-
-.textChunk {
-    flex: 1;
-}
-
-
-#randomDrawing {
-    width: 250px;
-}
-
-#artworkHeader {
-    font-size: 2rem;
-}
-
-#artworks {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-#artworks > img {
-    width: 250px;
-    margin: 10px 10px;
-}
-
-#footerText {
-    margin-top: 1vw;
-    text-align: center;
-    font-size: 1rem;
-    color: hsl(200, 10%, 75%);
+main {
+    margin-top: 3vw;
+    font-size: clamp(16px, 1.5vw, 24px);
 }
 
 
-@media (max-width: 600px) {
-    #topbar {
-        height: 16vw;
-    }
-
-    #right {
-        flex-direction: column;
-    }
-
-    #right > a {
-        font-size: 4vw;
-    } 
-
-    #title {
-        font-size: 6vw;
-    }
-
-    #chunk1 {
-        flex-direction: column;
-    }
-
-
-    #artworkHeader {
-        font-size: 2rem;
-    }
-
-    #artworks {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-
-    #artworks > img {
-        width: 150px;
-        margin: 10px 10px;
-    }
-}

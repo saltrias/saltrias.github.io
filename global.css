@@ -1,20 +1,23 @@
-* {
-    font-family: "Iosevka";         
-    color: white;
+@font-face {
+    src: url("assets/Iosevka.ttf");
+    font-family: "Iosevka";
 }
 
-body {
-    padding: 2vw;
-    background-color: #0A0A1B;
+body { 
+    background-color: #000;
+    margin: 1.5vw;
+}
+
+* {
+    font-family: "Iosevka";
+    color: #fff;
 }
 
 #title {
-    margin: 1.5vw 0 1.5vw 0;
-    font-size: 3rem;
+    font-size: clamp(24px, 10vw, 48px);
+    margin-bottom: 2vw;
 }
 
-@font-face {
-    font-family: "Iosevka";
-    src: url("assets/IosevkaCharonMono-Regular.ttf");
+p {
+    font-size: clamp(16px, 1.5vw, 24px);
 }
-
